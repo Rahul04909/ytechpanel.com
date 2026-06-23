@@ -167,30 +167,17 @@ button {
 }
 
 .brand-icon-box {
-    background: linear-gradient(135deg, var(--accent-orange), #d44d13);
-    color: var(--bg-white);
     width: 52px;
     height: 52px;
-    border-radius: 8px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 1.1;
     position: relative;
-    box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3);
 }
 
 .brand-icon-box svg {
-    width: 16px;
-    height: 16px;
-    margin-bottom: 2px;
-    stroke: currentColor;
-    stroke-width: 2.5;
-    fill: none;
+    width: 100%;
+    height: 100%;
 }
 
 .brand-logo-text {

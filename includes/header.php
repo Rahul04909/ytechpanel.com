@@ -41,31 +41,38 @@
         <div class="logo-container">
             <a href="index.php" class="brand-logo-main">
                 <div class="brand-icon-box">
-                    <!-- Power Button Icon -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2v10M18.36 5.64a9 9 0 1 1-12.73 0" stroke-linecap="round"/>
+                    <!-- Detailed Control Panel SVG Icon -->
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Panel Enclosure -->
+                        <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#003a8c" stroke-width="2.5"/>
+                        <!-- Outer Bezel -->
+                        <rect x="7" y="7" width="34" height="34" rx="2.5" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+                        <!-- Door Hinge line on the left -->
+                        <line x1="10" y1="10" x2="10" y2="38" stroke="#1e293b" stroke-width="2"/>
+                        <!-- Door lock on the right -->
+                        <circle cx="37" cy="24" r="2" fill="#cbd5e0" stroke="#475569" stroke-width="1"/>
+                        <!-- Status lights (3 phase) -->
+                        <circle cx="15" cy="14" r="2.5" fill="#ef4444"/> <!-- Red -->
+                        <circle cx="24" cy="14" r="2.5" fill="#eab308"/> <!-- Yellow -->
+                        <circle cx="33" cy="14" r="2.5" fill="#3b82f6"/> <!-- Blue -->
+                        <!-- Digital Screen -->
+                        <rect x="13" y="20" width="22" height="10" rx="1" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+                        <!-- Waveform or digital text -->
+                        <path d="M16 25 h3 l2 -3 l2 5 l2 -4 l2 2 h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Push Buttons / Dial -->
+                        <!-- Start Button (Green) -->
+                        <circle cx="17" cy="34" r="2.5" fill="#10b981"/>
+                        <!-- Stop Button (Red) -->
+                        <circle cx="24" cy="34" r="2.5" fill="#ef4444"/>
+                        <!-- Emergency Selector Dial -->
+                        <circle cx="31" cy="34" r="2.5" fill="#fbbf24"/>
                     </svg>
-                    <span>MBA</span>
                 </div>
                 <div class="brand-logo-text">
-                    <span class="logo-title">M.B AUTOMATION INDIA</span>
+                    <span class="logo-title">YTECH PANELS</span>
                     <span class="logo-subtitle">ELECTRIFYING THE WORLD</span>
                 </div>
             </a>
-            
-            <!-- Technology Partner (Siemens Elite) -->
-            <div class="partner-badge">
-                <div class="partner-text">
-                    Technology Partner
-                    <span>SIEPAN ELITE</span>
-                </div>
-                <div class="partner-siemens">
-                    <!-- SIEMENS SVG Logo -->
-                    <svg height="15" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="16" font-family="'Outfit', sans-serif" font-weight="800" font-size="18" fill="#00828A" letter-spacing="1">SIEMENS</text>
-                    </svg>
-                </div>
-            </div>
         </div>
 
         <!-- Contact details Right -->
@@ -84,8 +91,7 @@
                 <div class="info-details">
                     <span class="info-label">Phone</span>
                     <span class="info-value">
-                        <a href="tel:+919375960914">+91-93759-60914</a>
-                        <a href="tel:+919328247164">+91-93282-47164</a>
+                        <a href="tel:+918527113372">+91-85271-13372</a>
                     </span>
                 </div>
             </div>
@@ -102,7 +108,7 @@
                 <div class="info-details">
                     <span class="info-label">Email</span>
                     <span class="info-value">
-                        <a href="mailto:sales@mbautomation.co.in">sales@mbautomation.co.in</a>
+                        <a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a>
                     </span>
                 </div>
             </div>
@@ -220,14 +226,36 @@
 <div class="mobile-menu-drawer" id="mobile-menu-drawer">
     <div class="drawer-header">
         <div class="brand-logo-main">
-            <div class="brand-icon-box" style="width:40px; height:40px; font-size:11px;">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:12px; height:12px;">
-                    <path d="M12 2v10M18.36 5.64a9 9 0 1 1-12.73 0" stroke-linecap="round"/>
+            <div class="brand-icon-box" style="width:40px; height:40px;">
+                <!-- Detailed Control Panel SVG Icon -->
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Panel Enclosure -->
+                    <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#003a8c" stroke-width="2.5"/>
+                    <!-- Outer Bezel -->
+                    <rect x="7" y="7" width="34" height="34" rx="2.5" fill="#334155" stroke="#475569" stroke-width="1.5"/>
+                    <!-- Door Hinge line on the left -->
+                    <line x1="10" y1="10" x2="10" y2="38" stroke="#1e293b" stroke-width="2"/>
+                    <!-- Door lock on the right -->
+                    <circle cx="37" cy="24" r="2" fill="#cbd5e0" stroke="#475569" stroke-width="1"/>
+                    <!-- Status lights (3 phase) -->
+                    <circle cx="15" cy="14" r="2.5" fill="#ef4444"/> <!-- Red -->
+                    <circle cx="24" cy="14" r="2.5" fill="#eab308"/> <!-- Yellow -->
+                    <circle cx="33" cy="14" r="2.5" fill="#3b82f6"/> <!-- Blue -->
+                    <!-- Digital Screen -->
+                    <rect x="13" y="20" width="22" height="10" rx="1" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+                    <!-- Waveform or digital text -->
+                    <path d="M16 25 h3 l2 -3 l2 5 l2 -4 l2 2 h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Push Buttons / Dial -->
+                    <!-- Start Button (Green) -->
+                    <circle cx="17" cy="34" r="2.5" fill="#10b981"/>
+                    <!-- Stop Button (Red) -->
+                    <circle cx="24" cy="34" r="2.5" fill="#ef4444"/>
+                    <!-- Emergency Selector Dial -->
+                    <circle cx="31" cy="34" r="2.5" fill="#fbbf24"/>
                 </svg>
-                <span>MBA</span>
             </div>
             <div class="brand-logo-text">
-                <span class="logo-title" style="font-size:16px;">M.B AUTOMATION</span>
+                <span class="logo-title" style="font-size:16px;">YTECH PANELS</span>
                 <span class="logo-subtitle" style="font-size:8px;">ELECTRIFYING THE WORLD</span>
             </div>
         </div>
@@ -328,8 +356,7 @@
             <div class="info-details">
                 <span class="info-label">Phone</span>
                 <span class="info-value">
-                    <a href="tel:+919375960914" style="display:block;">+91-93759-60914</a>
-                    <a href="tel:+919328247164" style="display:block;">+91-93282-47164</a>
+                    <a href="tel:+918527113372" style="display:block;">+91-85271-13372</a>
                 </span>
             </div>
         </div>
@@ -344,7 +371,7 @@
             <div class="info-details">
                 <span class="info-label">Email</span>
                 <span class="info-value">
-                    <a href="mailto:sales@mbautomation.co.in">sales@mbautomation.co.in</a>
+                    <a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a>
                 </span>
             </div>
         </div>

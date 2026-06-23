@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <!-- Hero Slider Stylesheet -->
     <link rel="stylesheet" href="assets/css/hero.css">
+    <!-- Footer Stylesheet -->
+    <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
 
@@ -22,6 +24,9 @@
     <main class="main-content">
         <?php include 'components/hero.php'; ?>
     </main>
+
+    <!-- Footer Include -->
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 </html>

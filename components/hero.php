@@ -27,12 +27,6 @@
         </svg>
     </button>
 
-    <!-- Navigation Dot Indicators -->
-    <ul class="hero-dots">
-        <li class="hero-dot active" data-slide="0" aria-label="Go to Slide 1"></li>
-        <li class="hero-dot" data-slide="1" aria-label="Go to Slide 2"></li>
-        <li class="hero-dot" data-slide="2" aria-label="Go to Slide 3"></li>
-    </ul>
 </div>
 
 <!-- ==========================================
@@ -44,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!sliderContainer) return;
 
     const slides = sliderContainer.querySelectorAll('.hero-slide');
-    const dots = sliderContainer.querySelectorAll('.hero-dot');
     const prevBtn = document.getElementById('hero-prev');
     const nextBtn = document.getElementById('hero-next');
     
@@ -69,15 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 slide.classList.add('active');
             } else {
                 slide.classList.remove('active');
-            }
-        });
-
-        // Toggle active states on dots
-        dots.forEach((dot, i) => {
-            if (i === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
             }
         });
     }
@@ -107,14 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoSlide(); // Reset timer on click
     });
 
-    // Dot event listeners
-    dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            const slideIndex = parseInt(this.getAttribute('data-slide'));
-            showSlide(slideIndex);
-            startAutoSlide(); // Reset timer on click
-        });
-    });
 
     // Pause on hover
     sliderContainer.addEventListener('mouseenter', stopAutoSlide);

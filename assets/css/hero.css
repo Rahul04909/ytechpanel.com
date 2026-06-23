@@ -98,42 +98,6 @@
     stroke-linejoin: round;
 }
 
-/* Slide Indicator Dots */
-.hero-dots {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    list-style: none;
-    z-index: 10;
-    background-color: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.hero-dot:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-dot.active {
-    background-color: var(--accent-orange, #f26522);
-    width: 22px; /* Pill shape for active dot */
-    border-radius: 5px;
-}
 
 
 /* ==========================================
@@ -161,10 +125,6 @@
         right: 12px;
     }
     
-    .hero-dots {
-        bottom: 16px;
-        padding: 6px 12px;
-    }
 }
 
 /* Small Devices (Mobile, less than 576px) */

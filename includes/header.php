@@ -1,0 +1,440 @@
+<!-- ==========================================
+     TOP BAR
+     ========================================== -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            India's #1 Electrical Control Panels Manufacturers and Exporters.
+        </div>
+        <div class="top-bar-right">
+            <a href="#products-range" class="top-bar-link">
+                <!-- Box/Cart Icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                Products Range
+            </a>
+            <a href="#service-amc" class="top-bar-link">
+                <!-- Wrench/Spanner Icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                </svg>
+                Service & AMC
+            </a>
+            <a href="#get-quote" class="top-bar-link top-bar-cta">
+                <!-- Quote Document Icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+                Get A Quote
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MIDDLE BAR (LOGO & CONTACT INFO)
+     ========================================== -->
+<div class="middle-bar">
+    <div class="container">
+        <!-- Logo Branding Left -->
+        <div class="logo-container">
+            <a href="index.php" class="brand-logo-main">
+                <div class="brand-icon-box">
+                    <!-- Power Button Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v10M18.36 5.64a9 9 0 1 1-12.73 0" stroke-linecap="round"/>
+                    </svg>
+                    <span>MBA</span>
+                </div>
+                <div class="brand-logo-text">
+                    <span class="logo-title">M.B AUTOMATION INDIA</span>
+                    <span class="logo-subtitle">ELECTRIFYING THE WORLD</span>
+                </div>
+            </a>
+            
+            <!-- Technology Partner (Siemens Elite) -->
+            <div class="partner-badge">
+                <div class="partner-text">
+                    Technology Partner
+                    <span>SIEPAN ELITE</span>
+                </div>
+                <div class="partner-siemens">
+                    <!-- SIEMENS SVG Logo -->
+                    <svg height="15" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="16" font-family="'Outfit', sans-serif" font-weight="800" font-size="18" fill="#00828A" letter-spacing="1">SIEMENS</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact details Right -->
+        <div class="contact-info-wrapper">
+            <!-- Phone Block -->
+            <div class="info-block">
+                <div class="info-icon">
+                    <!-- Double device / outline phones icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="2" width="10" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="10" y1="17" x2="10" y2="17" stroke-linecap="round"/>
+                        <rect x="11" y="7" width="8" height="14" rx="1.5" fill="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="15" y1="18" x2="15" y2="18" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="info-details">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">
+                        <a href="tel:+919375960914">+91-93759-60914</a>
+                        <a href="tel:+919328247164">+91-93282-47164</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Email Block -->
+            <div class="info-block">
+                <div class="info-icon">
+                    <!-- Envelope Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="info-details">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">
+                        <a href="mailto:sales@mbautomation.co.in">sales@mbautomation.co.in</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     BOTTOM NAVIGATION BAR
+     ========================================== -->
+<div class="nav-bar">
+    <div class="container">
+        <!-- Desktop Nav items -->
+        <ul class="desktop-menu">
+            <li class="menu-item active">
+                <a href="#home" class="menu-link">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="#about" class="menu-link">About Us</a>
+            </li>
+            
+            <!-- Products with Dropdown -->
+            <li class="menu-item">
+                <a href="#products" class="menu-link">
+                    Products
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#pcc-panels" class="dropdown-link">Power Control Centre (PCC)</a></li>
+                    <li><a href="#mcc-panels" class="dropdown-link">Motor Control Centre (MCC)</a></li>
+                    <li><a href="#apfc-panels" class="dropdown-link">APFC Panels</a></li>
+                    <li class="has-nested-dropdown">
+                        <a href="#automation-panels" class="dropdown-link">
+                            Automation Panels
+                        </a>
+                        <ul class="nested-dropdown-menu">
+                            <li><a href="#plc-panels" class="dropdown-link">PLC Control Panels</a></li>
+                            <li><a href="#scada-systems" class="dropdown-link">SCADA / HMI Systems</a></li>
+                            <li><a href="#vfd-panels" class="dropdown-link">VFD Panels</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#distribution-boards" class="dropdown-link">Distribution Boards</a></li>
+                </ul>
+            </li>
+            
+            <!-- System Integrator with Dropdown -->
+            <li class="menu-item">
+                <a href="#system-integrator" class="menu-link">
+                    System Integrator
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#siemens-partnership" class="dropdown-link">Siemens Automation</a></li>
+                    <li><a href="#plc-scada-integration" class="dropdown-link">PLC/SCADA Integration</a></li>
+                    <li><a href="#drives-softstarters" class="dropdown-link">Drives & Soft Starters</a></li>
+                </ul>
+            </li>
+            
+            <li class="menu-item">
+                <a href="#manufacturing" class="menu-link">Manufacturing</a>
+            </li>
+            <li class="menu-item">
+                <a href="#quality" class="menu-link">Quality</a>
+            </li>
+            <li class="menu-item">
+                <a href="#clientele" class="menu-link">Clientele</a>
+            </li>
+            
+            <!-- Enquiry with Dropdown -->
+            <li class="menu-item">
+                <a href="#enquiry" class="menu-link">
+                    Enquiry
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#send-enquiry" class="dropdown-link">Submit Enquiry</a></li>
+                    <li><a href="#request-callback" class="dropdown-link">Request Call Back</a></li>
+                    <li><a href="#custom-quote" class="dropdown-link">Custom Quote</a></li>
+                </ul>
+            </li>
+            
+            <li class="menu-item">
+                <a href="#contact" class="menu-link">Contact Us</a>
+            </li>
+        </ul>
+
+        <!-- Mobile Trigger Button (Visible only on Mobile/Tablet) -->
+        <button class="mobile-trigger" id="mobile-menu-open" aria-label="Open Menu">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+
+        <!-- Search Icon Toggle (Accent) -->
+        <div class="header-search">
+            <a href="#search" class="search-toggle" aria-label="Search site">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MOBILE RESPONSIVE DRAW SYSTEM
+     ========================================== -->
+<!-- Drawer Backdrop -->
+<div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+
+<!-- Drawer Menu -->
+<div class="mobile-menu-drawer" id="mobile-menu-drawer">
+    <div class="drawer-header">
+        <div class="brand-logo-main">
+            <div class="brand-icon-box" style="width:40px; height:40px; font-size:11px;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:12px; height:12px;">
+                    <path d="M12 2v10M18.36 5.64a9 9 0 1 1-12.73 0" stroke-linecap="round"/>
+                </svg>
+                <span>MBA</span>
+            </div>
+            <div class="brand-logo-text">
+                <span class="logo-title" style="font-size:16px;">M.B AUTOMATION</span>
+                <span class="logo-subtitle" style="font-size:8px;">ELECTRIFYING THE WORLD</span>
+            </div>
+        </div>
+        <button class="drawer-close" id="mobile-menu-close" aria-label="Close Menu">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Drawer Navigation Links -->
+    <ul class="drawer-menu-list">
+        <li class="drawer-menu-item active">
+            <a href="#home" class="drawer-menu-link">Home</a>
+        </li>
+        <li class="drawer-menu-item">
+            <a href="#about" class="drawer-menu-link">About Us</a>
+        </li>
+        
+        <!-- Products Accordion -->
+        <li class="drawer-menu-item has-accordion">
+            <a href="#" class="drawer-menu-link accordion-toggle">
+                Products
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="drawer-submenu">
+                <li><a href="#pcc-panels" class="drawer-submenu-link">Power Control Centre (PCC)</a></li>
+                <li><a href="#mcc-panels" class="drawer-submenu-link">Motor Control Centre (MCC)</a></li>
+                <li><a href="#apfc-panels" class="drawer-submenu-link">APFC Panels</a></li>
+                <li class="drawer-submenu-item has-nested-accordion">
+                    <a href="#" class="drawer-submenu-link nested-accordion-toggle">
+                        Automation Panels
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:10px; height:10px;"><polyline points="6 9 12 15 18 9"/></svg>
+                    </a>
+                    <ul class="drawer-nested-submenu">
+                        <li><a href="#plc-panels" class="drawer-nested-submenu-link">PLC Control Panels</a></li>
+                        <li><a href="#scada-systems" class="drawer-nested-submenu-link">SCADA / HMI Systems</a></li>
+                        <li><a href="#vfd-panels" class="drawer-nested-submenu-link">VFD Panels</a></li>
+                    </ul>
+                </li>
+                <li><a href="#distribution-boards" class="drawer-submenu-link">Distribution Boards</a></li>
+            </ul>
+        </li>
+        
+        <!-- System Integrator Accordion -->
+        <li class="drawer-menu-item has-accordion">
+            <a href="#" class="drawer-menu-link accordion-toggle">
+                System Integrator
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="drawer-submenu">
+                <li><a href="#siemens-partnership" class="drawer-submenu-link">Siemens Automation</a></li>
+                <li><a href="#plc-scada-integration" class="drawer-submenu-link">PLC/SCADA Integration</a></li>
+                <li><a href="#drives-softstarters" class="drawer-submenu-link">Drives & Soft Starters</a></li>
+            </ul>
+        </li>
+        
+        <li class="drawer-menu-item">
+            <a href="#manufacturing" class="drawer-menu-link">Manufacturing</a>
+        </li>
+        <li class="drawer-menu-item">
+            <a href="#quality" class="drawer-menu-link">Quality</a>
+        </li>
+        <li class="drawer-menu-item">
+            <a href="#clientele" class="drawer-menu-link">Clientele</a>
+        </li>
+        
+        <!-- Enquiry Accordion -->
+        <li class="drawer-menu-item has-accordion">
+            <a href="#" class="drawer-menu-link accordion-toggle">
+                Enquiry
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="drawer-submenu">
+                <li><a href="#send-enquiry" class="drawer-submenu-link">Submit Enquiry</a></li>
+                <li><a href="#request-callback" class="drawer-submenu-link">Request Call Back</a></li>
+                <li><a href="#custom-quote" class="drawer-submenu-link">Custom Quote</a></li>
+            </ul>
+        </li>
+        
+        <li class="drawer-menu-item">
+            <a href="#contact" class="drawer-menu-link">Contact Us</a>
+        </li>
+    </ul>
+
+    <!-- Drawer Contact details / CTA -->
+    <div class="drawer-footer">
+        <div class="info-block">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="10" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="10" y1="17" x2="10" y2="17"/>
+                    <rect x="11" y="7" width="8" height="14" rx="1.5" fill="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="15" y1="18" x2="15" y2="18"/>
+                </svg>
+            </div>
+            <div class="info-details">
+                <span class="info-label">Phone</span>
+                <span class="info-value">
+                    <a href="tel:+919375960914" style="display:block;">+91-93759-60914</a>
+                    <a href="tel:+919328247164" style="display:block;">+91-93282-47164</a>
+                </span>
+            </div>
+        </div>
+        
+        <div class="info-block">
+            <div class="info-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="info-details">
+                <span class="info-label">Email</span>
+                <span class="info-value">
+                    <a href="mailto:sales@mbautomation.co.in">sales@mbautomation.co.in</a>
+                </span>
+            </div>
+        </div>
+
+        <a href="#get-quote" class="drawer-footer-cta">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; fill: currentColor;">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+            Get A Quote
+        </a>
+    </div>
+</div>
+
+<!-- ==========================================
+     MOBILE NAVIGATION JAVASCRIPT
+     ========================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerBtn = document.getElementById('mobile-menu-open');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const drawer = document.getElementById('mobile-menu-drawer');
+    
+    // Toggle mobile drawer
+    function toggleDrawer(open) {
+        if (open) {
+            drawer.classList.add('active');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Disable background scroll
+        } else {
+            drawer.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = ''; // Enable background scroll
+        }
+    }
+    
+    burgerBtn.addEventListener('click', () => toggleDrawer(true));
+    closeBtn.addEventListener('click', () => toggleDrawer(false));
+    backdrop.addEventListener('click', () => toggleDrawer(false));
+    
+    // Accordion Toggle for Mobile Menu
+    const accordions = document.querySelectorAll('.accordion-toggle');
+    accordions.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Toggle active class on current parent
+            parent.classList.toggle('expanded');
+            
+            // Adjust submenu height for animation
+            const submenu = parent.querySelector('.drawer-submenu');
+            if (parent.classList.contains('expanded')) {
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+            } else {
+                submenu.style.maxHeight = '0px';
+                // Also close nested accordion if open
+                parent.querySelectorAll('.has-nested-accordion').forEach(nested => {
+                    nested.classList.remove('expanded');
+                    const nestedSub = nested.querySelector('.drawer-nested-submenu');
+                    nestedSub.style.maxHeight = '0px';
+                });
+            }
+        });
+    });
+
+    // Nested Accordion Toggle for Mobile Menu
+    const nestedAccordions = document.querySelectorAll('.nested-accordion-toggle');
+    nestedAccordions.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parent = this.parentElement;
+            const ancestorMenu = parent.closest('.drawer-submenu');
+            
+            parent.classList.toggle('expanded');
+            
+            const nestedSub = parent.querySelector('.drawer-nested-submenu');
+            
+            if (parent.classList.contains('expanded')) {
+                // First increase nested height
+                nestedSub.style.maxHeight = nestedSub.scrollHeight + 'px';
+                // Then adjust outer submenu height to accommodate nested content
+                ancestorMenu.style.maxHeight = (ancestorMenu.scrollHeight + nestedSub.scrollHeight) + 'px';
+            } else {
+                const heightToReduce = nestedSub.scrollHeight;
+                nestedSub.style.maxHeight = '0px';
+                ancestorMenu.style.maxHeight = (ancestorMenu.scrollHeight - heightToReduce) + 'px';
+            }
+        });
+    });
+});
+</script>

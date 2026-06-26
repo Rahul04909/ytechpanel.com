@@ -39,6 +39,7 @@ $nextOrder = $maxOrder + 1;
             <div class="form-card-body">
                 <form id="addClientForm" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="add_client">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
@@ -79,7 +80,7 @@ $nextOrder = $maxOrder + 1;
                                 <div class="logo-upload-area" id="logoUploadArea">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <p>Click or drag logo image here<br><small>Allowed: JPG, PNG, GIF, WebP | Max: 5MB</small></p>
-                                    <input type="file" name="logo" id="logoInput" accept="image/*" style="display:none;">
+                                    <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
                                 </div>
                                 <img id="logoPreview" class="logo-preview" alt="Logo Preview">
                                 <small id="logoFileName" style="display:block; margin-top:6px; color:#64748b;"></small>
@@ -138,4 +139,11 @@ $(document).ready(function() {
                     .then(function() { window.location.href = 'clients.php'; });
                 } else { Swal.fire({ icon: 'error', title: 'Error', text: res.message }); }
             },
-            error: function() { Swal.fire({ icon: 'error', title
+            error: function() { Swal.fire({ icon: 'error', title: 'Error', text: 'Network error.' }); },
+            complete: function() { btn.prop('disabled', false).html('<i class="fas fa-save"></i> Add Client'); }
+        });
+    });
+});
+</script>
+
+<?php include './footer.php'; ?>

@@ -55,6 +55,7 @@ if (!empty($client['logo'])) {
             <div class="form-card-body">
                 <form id="editClientForm" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="update_client">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
                     <input type="hidden" name="client_id" value="<?= $client['id'] ?>">
                     <div class="row">
                         <div class="col-md-8">
@@ -102,7 +103,7 @@ if (!empty($client['logo'])) {
                                 <div class="logo-upload-area" id="logoUploadArea">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <p>Click or drag to replace logo<br><small>Allowed: JPG, PNG, GIF, WebP | Max: 5MB</small></p>
-                                    <input type="file" name="logo" id="logoInput" accept="image/*" style="display:none;">
+                                    <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
                                 </div>
                                 <img id="newLogoPreview" class="logo-preview" alt="New Logo Preview" style="display:none;">
                                 <small id="logoFileName" style="display:block; margin-top:6px; color:#64748b;"></small>
@@ -140,4 +141,32 @@ $(document).ready(function() {
     fileInput.on('change', function(e) {
         var file = e.target.files[0];
         if (file) {
-            if (file.size > 5 * 1024 
+            if (file.size > 5 * 1024 * 1024) { Swal.fire({ icon: 'error', title: 'Too Large', text: 'Logo must be under 5MB.' }); fileInput.val(''); return; }
+            var reader = new FileReader();
+            reader.onload = function(ev) { preview.attr('src', ev.target.result).show(); };
+            reader.readAsDataURL(file);
+            fileName.text(file.name);
+        }
+    });
+
+    $('#editClientForm').on('submit', function(e) {
+        e.preventDefault();
+        var btn = $('#submitBtn');
+        btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Updating...');
+        $.ajax({
+            url: 'handlers/client-handler.php', type: 'POST',
+            data: new FormData(this), processData: false, contentType: false, dataType: 'json',
+            success: function(res) {
+                if (res.success) {
+                    Swal.fire({ icon: 'success', title: 'Updated!', text: res.message, timer: 2000, showConfirmButton: false })
+                    .then(function() { window.location.href = 'clients.php'; });
+                } else { Swal.fire({ icon: 'error', title: 'Error', text: res.message }); }
+            },
+            error: function() { Swal.fire({ icon: 'error', title: 'Error', text: 'Network error.' }); },
+            complete: function() { btn.prop('disabled', false).html('<i class="fas fa-save"></i> Update Client'); }
+        });
+    });
+});
+</script>
+
+<?php include './footer.php'; ?>

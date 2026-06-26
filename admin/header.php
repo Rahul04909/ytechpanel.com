@@ -1,4 +1,8 @@
 <?php
+// Require authentication on all admin pages (except login/logout which handle their own auth)
+require_once __DIR__ . '/auth.php';
+requireAdminAuth();
+
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
 $menuItems = [
@@ -429,10 +433,10 @@ $active_page = $active_pageInfo['active_page'] ?? null;
                 <div class="user-panel mt-3 pb-3 mb-3">
                     <a href="./profile.php" class="d-flex">
                         <div class="image">
-                            <img src="./src/images/user-avtar.png" class="img-circle elevation-2 bg-white" alt="User Image">
+                            <img src="./src/images/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'user-avtar.png') ?>" class="img-circle elevation-2 bg-white" alt="User Image">
                         </div>
                         <div class="info">
-                            Rahul
+                            <?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?>
                         </div>
                     </a>
                 </div>

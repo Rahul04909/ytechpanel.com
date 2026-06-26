@@ -13,12 +13,27 @@ $sessionLifetime = (int)($_ENV['ADMIN_SESSION_LIFETIME'] ?? 7200);
 
 if (session_status() === PHP_SESSION_NONE) {
     session_name($sessionName);
+
+    // Determine if we're on HTTPS — configurable via env, auto-detect if not set
+    $secure = filter_var($_ENV['SESSION_COOKIE_SECURE'] ?? '', FILTER_VALIDATE_BOOLEAN);
+    if ($secure === false && !empty($_ENV['SESSION_COOKIE_SECURE'])) {
+        // Not explicitly true — fallback to auto-detect
+        $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+               || (!empty($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)
+               || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+    } elseif ($secure === false) {
+        // Not set at all — auto-detect
+        $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+               || (!empty($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)
+               || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+    }
+
     session_set_cookie_params([
         'lifetime' => $sessionLifetime,
         'path'     => '/',
-        'secure'   => false,        // Set to true on HTTPS production
-        'httponly' => true,          // Prevent JS access
-        'samesite' => 'Strict',      // CSRF protection
+        'secure'   => $secure,
+        'httponly' => true,
+        'samesite' => 'Strict',
     ]);
     session_start();
 }

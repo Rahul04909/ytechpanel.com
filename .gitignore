@@ -1,0 +1,3 @@
+# Git ignore file — do not commit sensitive files to version control
+.env
+vendor/

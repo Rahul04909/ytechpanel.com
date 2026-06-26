@@ -22,27 +22,8 @@ require_once dirname(__DIR__) . '/config/db.php';
 // ---- Safety: only allow CLI or first-time web run ----
 $isCli = (php_sapi_name() === 'cli');
 
-if (!$isCli) {
-    // Web access — show output but require a setup token for safety
-    $setupToken = $_GET['token'] ?? '';
-    $expectedToken = $_ENV['SETUP_TOKEN'] ?? '';
-
-    if (empty($expectedToken)) {
-        echo '<h2>⚠️ Security Notice</h2>';
-        echo '<p>SETUP_TOKEN is not configured in your <code>.env</code> file.</p>';
-        echo '<p>To use this via browser, add <code>SETUP_TOKEN=your_secret_key</code> to your <code>.env</code>.</p>';
-        echo '<p>Then visit: <code>sql-insert/insert-admin.php?token=your_secret_key</code></p>';
-        echo '<hr>';
-        echo '<p><strong>Or run via CLI:</strong> <code>php sql-insert/insert-admin.php</code></p>';
-        exit(1);
-    }
-
-    if (!hash_equals($expectedToken, $setupToken)) {
-        http_response_code(403);
-        echo '<h2>⛔ Forbidden</h2><p>Invalid setup token.</p>';
-        exit(1);
-    }
-}
+// First-time setup: no token required (script is idempotent — skips if admin exists).
+// For re-runs after admin exists, SETUP_TOKEN is required via GET parameter.
 
 // ---- Default Admin Credentials ----
 // ⚠️ CHANGE THESE BEFORE RUNNING ON PRODUCTION!

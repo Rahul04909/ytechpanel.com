@@ -14,6 +14,14 @@ $menuItems = [
         ],
     ],
     [
+        "menuTitle" => "Clients",
+        "icon" => "fas fa-building",
+        "pages" => [
+            ["title" => "All Clients", "url" => "clients.php"],
+            ["title" => "Add Client", "url" => "client-add.php"]
+        ],
+    ],
+    [
         "menuTitle" => "Settings",
         "icon" => "fas fa-cog",
         "pages" => [

@@ -20,6 +20,10 @@ desktop.ini
 
 # Uploads & temp files
 /admin/src/uploads/
+/admin/uploads/client_logos/*
+!admin/uploads/client_logos/.gitkeep
+/admin/src/images/profile_picture/*
+!admin/src/images/profile_picture/.gitkeep
 /tmp/
 *.log
 

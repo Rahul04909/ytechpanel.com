@@ -77,8 +77,8 @@ if (empty($_SESSION['csrf_token'])) {
         :root{--wp-admin-bg:#f0f0f1;--wp-white:#fff;--wp-dark:#1d2327;--wp-text:#3c434a;--wp-text-light:#646970;--wp-border:#c3c4c7;--wp-blue:#2271b1;--wp-blue-dark:#135e96;--wp-green:#00a32a;--wp-red:#b32d2e;--wp-yellow:#dba617;--wp-sidebar-bg:#1d2327;--wp-sidebar-text:#f0f0f1;--wp-sidebar-hover:#2c3338;--wp-sidebar-active:#2271b1}
         body{font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--wp-admin-bg);color:var(--wp-text)}
         .main-sidebar{background:var(--wp-sidebar-bg)!important;border-right:none!important;box-shadow:none!important}
-        .brand-link{background:var(--wp-sidebar-bg)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:14px 20px!important;display:flex!important;justify-content:center!important;align-items:center!important;margin:0!important;height:58px}
-        .brand-link .brand-image{float:none!important;margin:0!important;max-height:30px;width:auto;filter:brightness(0) invert(1)}
+        .brand-link{background:var(--wp-sidebar-bg)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:10px 20px!important;display:flex!important;justify-content:center!important;align-items:center!important;margin:0!important;height:65px}
+        .brand-link .brand-image{float:none!important;margin:0!important;max-height:45px;width:auto;}
         .user-panel{border-bottom:1px solid rgba(255,255,255,.08)!important;margin:0!important;padding:14px 16px!important}
         .user-panel .image img{width:35px;height:35px;border-radius:50%;border:2px solid rgba(255,255,255,.2)}
         .user-panel .info{color:var(--wp-sidebar-text)!important;font-weight:500;font-size:.85rem}
@@ -86,16 +86,19 @@ if (empty($_SESSION['csrf_token'])) {
         .nav-sidebar .nav-link{color:rgba(255,255,255,.75)!important;padding:11px 16px!important;border-radius:0!important;margin:0!important;position:relative;transition:all .15s;font-size:.875rem;font-weight:400}
         .nav-sidebar .nav-link:hover{background:var(--wp-sidebar-hover)!important;color:#fff!important}
         .nav-sidebar .nav-link.active{background:var(--wp-sidebar-active)!important;color:#fff!important;box-shadow:none!important}
+        .nav-sidebar .nav-item.has-treeview > .nav-link.active{background:transparent!important;}
         .nav-sidebar .nav-link.active::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#fff}
         .nav-sidebar .nav-link.active i.nav-icon{color:#fff!important}
         .nav-sidebar .nav-icon{color:rgba(255,255,255,.5);margin-right:10px!important;width:20px;text-align:center;font-size:.9rem;transition:color .15s}
         .nav-link:hover .nav-icon,.nav-link.active .nav-icon,.menu-open>.nav-link .nav-icon{color:#fff!important}
         .nav-treeview{background:rgba(0,0,0,.15)!important;padding:0!important}
+        .nav-treeview>.nav-item{border-bottom:1px dashed rgba(255,255,255,.15);}
+        .nav-treeview>.nav-item:last-child{border-bottom:none;}
         .nav-treeview>.nav-item>.nav-link{padding-left:48px!important;font-size:.8rem;color:rgba(255,255,255,.6)!important}
         .nav-treeview>.nav-item>.nav-link:hover{color:#fff!important;background:rgba(255,255,255,.05)!important}
         .nav-treeview>.nav-item>.nav-link.active{color:#fff!important;background:var(--wp-sidebar-active)!important;font-weight:500}
         .nav-treeview>.nav-item>.nav-link.active::after{content:"";position:absolute;right:0;top:10px;bottom:10px;width:3px;background:var(--wp-yellow);border-radius:2px 0 0 2px}
-        .submenu-icon{font-size:6px!important;opacity:.5;margin-right:14px!important;width:auto!important}
+        .submenu-icon{font-size:10px!important;opacity:.5;margin-right:14px!important;width:auto!important}
         .nav-link.active .submenu-icon,.nav-link:hover .submenu-icon{opacity:1}
         .nav-sidebar .right{font-size:.75rem!important;top:1.1rem!important;color:rgba(255,255,255,.4)!important;transition:all .2s;margin-top:-2px}
         .nav-sidebar .right::before{content:"\f067";font-family:"Font Awesome 6 Free";font-weight:900}
@@ -165,7 +168,8 @@ if (empty($_SESSION['csrf_token'])) {
                 <div class="user-panel mt-3 pb-3 mb-3">
                     <a href="./profile.php" class="d-flex align-items-center">
                         <div class="image">
-                            <img src="./src/images/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'user-avtar.png') ?>" class="img-circle" alt="User">
+                            <?php $headerProfilePic = !empty($_SESSION['admin_profile_pic']) ? './src/images/profile_picture/' . htmlspecialchars($_SESSION['admin_profile_pic']) : './src/images/user-avtar.png'; ?>
+                            <img src="<?= $headerProfilePic ?>" class="img-circle" alt="User">
                         </div>
                         <div class="info"><?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?></div>
                     </a>
@@ -188,7 +192,7 @@ if (empty($_SESSION['csrf_token'])) {
                                         <?php foreach ($menuItem['pages'] as $page): ?>
                                             <li class="nav-item">
                                                 <a href="<?= $page['url'] ?>" class="nav-link <?= $page === $active_page ? 'active' : '' ?>">
-                                                    <i class="fas fa-circle nav-icon submenu-icon"></i>
+                                                    <i class="fas fa-angle-right nav-icon submenu-icon"></i>
                                                     <p><?= $page['title'] ?></p>
                                                 </a>
                                             </li>

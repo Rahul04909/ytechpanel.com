@@ -13,22 +13,22 @@ $nextOrder = $maxOrder + 1;
 
 <style>
     .form-card { background: #fff; border: 1px solid #e2e8f0; margin-bottom: 24px; }
-    .form-card-header { background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; font-weight: 600; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 10px; }
-    .form-card-header i { color: #003a8c; }
+    .form-card-header { background: #f1f1f1; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; font-weight: 600; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+    .form-card-header i { color: #2271b1; }
     .form-card-body { padding: 24px; }
     .form-card .form-group label { font-size: 13px; font-weight: 600; color: #1e293b; margin-bottom: 6px; display: block; }
     .form-card .form-control { border: 1.5px solid #e2e8f0; border-radius: 4px; padding: 10px 14px; font-size: 14px; transition: border-color 0.2s; width: 100%; }
-    .form-card .form-control:focus { border-color: #003a8c; box-shadow: 0 0 0 3px rgba(0, 58, 140, 0.08); outline: none; }
+    .form-card .form-control:focus { border-color: #2271b1; box-shadow: 0 0 0 3px rgba(0, 58, 140, 0.08); outline: none; }
     .form-card textarea.form-control { min-height: 100px; resize: vertical; }
     .form-card select.form-control { appearance: auto; }
-    .btn-primary-custom { background: #003a8c; color: #fff; border: none; padding: 10px 28px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s; }
-    .btn-primary-custom:hover { background: #002a6c; }
-    .btn-secondary-custom { background: #64748b; color: #fff; border: none; padding: 10px 28px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-primary-custom { background: #2271b1; color: #fff; border: none; padding: 10px 28px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+    .btn-primary-custom:hover { background: #135e96; }
+    .btn-secondary-custom { background: #646970; color: #fff; border: none; padding: 10px 28px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
     .btn-secondary-custom:hover { background: #475569; color: #fff; }
     .logo-upload-area { border: 2px dashed #e2e8f0; border-radius: 8px; padding: 30px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-    .logo-upload-area:hover, .logo-upload-area.dragover { border-color: #003a8c; background: #f0f4ff; }
+    .logo-upload-area:hover, .logo-upload-area.dragover { border-color: #2271b1; background: #f0f4ff; }
     .logo-upload-area i { font-size: 36px; color: #94a3b8; margin-bottom: 10px; display: block; }
-    .logo-upload-area p { color: #64748b; font-size: 13px; margin: 0; }
+    .logo-upload-area p { color: #646970; font-size: 13px; margin: 0; }
     .logo-preview { max-width: 200px; max-height: 120px; object-fit: contain; margin: 10px auto; display: none; border: 1px solid #e2e8f0; }
 </style>
 
@@ -83,7 +83,7 @@ $nextOrder = $maxOrder + 1;
                                     <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
                                 </div>
                                 <img id="logoPreview" class="logo-preview" alt="Logo Preview">
-                                <small id="logoFileName" style="display:block; margin-top:6px; color:#64748b;"></small>
+                                <small id="logoFileName" style="display:block; margin-top:6px; color:#646970;"></small>
                             </div>
                         </div>
                     </div>

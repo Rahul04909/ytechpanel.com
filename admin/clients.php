@@ -47,14 +47,14 @@ if (empty($_SESSION['csrf_token'])) {
 
 <style>
     .clients-admin-card { background: #fff; border: 1px solid #e2e8f0; margin-bottom: 24px; }
-    .clients-admin-header { background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .clients-admin-header { background: #f1f1f1; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .clients-admin-header h5 { margin: 0; font-weight: 600; font-size: 15px; color: #1e293b; }
-    .btn-add-client { background: #003a8c; color: #fff; border: none; padding: 8px 20px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; }
-    .btn-add-client:hover { background: #002a6c; color: #fff; }
+    .btn-add-client { background: #2271b1; color: #fff; border: none; padding: 8px 20px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; }
+    .btn-add-client:hover { background: #135e96; color: #fff; }
     .clients-table { width: 100%; border-collapse: collapse; }
-    .clients-table th { background: #f8fafc; border-bottom: 2px solid #e2e8f0; padding: 12px 16px; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; }
+    .clients-table th { background: #f1f1f1; border-bottom: 2px solid #e2e8f0; padding: 12px 16px; font-size: 12px; font-weight: 600; color: #646970; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; }
     .clients-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #1e293b; vertical-align: middle; }
-    .clients-table tr:hover { background: #f8fafc; }
+    .clients-table tr:hover { background: #f1f1f1; }
     .client-logo-cell { width: 60px; }
     .client-logo-thumb { width: 48px; height: 48px; object-fit: contain; border: 1px solid #e2e8f0; background: #fff; padding: 4px; }
     .client-logo-thumb.no-logo { background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 20px; }
@@ -62,8 +62,8 @@ if (empty($_SESSION['csrf_token'])) {
     .status-active { background: #dcfce7; color: #166534; }
     .status-inactive { background: #fee2e2; color: #991b1b; }
     .action-btns { display: flex; gap: 6px; }
-    .btn-edit { background: #003a8c; color: #fff; border: none; padding: 6px 12px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-    .btn-edit:hover { background: #002a6c; color: #fff; }
+    .btn-edit { background: #2271b1; color: #fff; border: none; padding: 6px 12px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .btn-edit:hover { background: #135e96; color: #fff; }
     .btn-delete { background: #dc2626; color: #fff; border: none; padding: 6px 12px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
     .btn-delete:hover { background: #b91c1c; }
     .empty-state { text-align: center; padding: 60px 24px; color: #94a3b8; }
@@ -71,8 +71,8 @@ if (empty($_SESSION['csrf_token'])) {
     .empty-state p { font-size: 14px; margin-bottom: 20px; }
     .search-box { display: flex; gap: 12px; align-items: center; }
     .search-box input { border: 1.5px solid #e2e8f0; border-radius: 4px; padding: 7px 14px; font-size: 13px; width: 260px; }
-    .search-box input:focus { border-color: #003a8c; outline: none; }
-    .count-badge { background: #003a8c; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-left: 8px; }
+    .search-box input:focus { border-color: #2271b1; outline: none; }
+    .count-badge { background: #2271b1; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-left: 8px; }
 </style>
 
 <?php if (!empty($successMsg)): ?>
@@ -89,7 +89,7 @@ if (empty($_SESSION['csrf_token'])) {
 <div class="clients-admin-card">
     <div class="clients-admin-header">
         <h5>
-            <i class="fas fa-building" style="color:#003a8c;"></i>
+            <i class="fas fa-building" style="color:#2271b1;"></i>
             Clients
             <span class="count-badge"><?= count($clients) ?></span>
         </h5>
@@ -132,7 +132,7 @@ if (empty($_SESSION['csrf_token'])) {
                             <td><strong><?= htmlspecialchars($client['name']) ?></strong></td>
                             <td>
                                 <?php if (!empty($client['website'])): ?>
-                                    <a href="<?= htmlspecialchars($client['website']) ?>" target="_blank" style="color:#003a8c; text-decoration:none;"><?= htmlspecialchars($client['website']) ?> <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
+                                    <a href="<?= htmlspecialchars($client['website']) ?>" target="_blank" style="color:#2271b1; text-decoration:none;"><?= htmlspecialchars($client['website']) ?> <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
                                 <?php else: ?>
                                     <span style="color:#94a3b8;">—</span>
                                 <?php endif; ?>
@@ -180,7 +180,7 @@ function deleteClient(id, name) {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#dc2626',
-        cancelButtonColor: '#64748b',
+        cancelButtonColor: '#646970',
         confirmButtonText: 'Yes, delete it!',
         cancelButtonText: 'Cancel'
     }).then(function(result) {

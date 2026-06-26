@@ -1,45 +1,6 @@
 <footer class="site-footer">
 
-    <!-- ==========================================
-         TOP INFO STRIP (Logo + Description)
-         ========================================== -->
-    <div class="footer-top-strip">
-        <div class="footer-top-inner">
 
-            <!-- Logo -->
-            <div class="footer-logo-block">
-                <a href="index.php" class="footer-logo-link">
-                    <div class="footer-logo-icon">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#003a8c" stroke-width="2.5"/>
-                            <rect x="7" y="7" width="34" height="34" rx="2.5" fill="#334155" stroke="#475569" stroke-width="1.5"/>
-                            <line x1="10" y1="10" x2="10" y2="38" stroke="#1e293b" stroke-width="2"/>
-                            <circle cx="37" cy="24" r="2" fill="#cbd5e0" stroke="#475569" stroke-width="1"/>
-                            <circle cx="15" cy="14" r="2.5" fill="#ef4444"/>
-                            <circle cx="24" cy="14" r="2.5" fill="#eab308"/>
-                            <circle cx="33" cy="14" r="2.5" fill="#3b82f6"/>
-                            <rect x="13" y="20" width="22" height="10" rx="1" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-                            <path d="M16 25 h3 l2 -3 l2 5 l2 -4 l2 2 h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="17" cy="34" r="2.5" fill="#10b981"/>
-                            <circle cx="24" cy="34" r="2.5" fill="#ef4444"/>
-                            <circle cx="31" cy="34" r="2.5" fill="#fbbf24"/>
-                        </svg>
-                    </div>
-                    <div class="footer-logo-text">
-                        <span class="logo-name">YTECH PANELS</span>
-                        <span class="logo-tagline">ELECTRIFYING THE WORLD</span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Description -->
-            <div class="footer-desc-block">
-                <p>YTech Panels is engaged in manufacturing and supplying of a wide range of Electrical and Instrument Control Panels, which is widely used across different industries for a variety of applications.</p>
-                <p>Our range of automatic electrical control panel products are known for its reliable approach, efficiency, &amp; excellence and thus, are utilized by industries such as Chemical, Textile, Petrochemical, Pharmaceuticals, Heavy Metal, Food Processing, and Water Treatment, Shopping Malls &amp; Plaza, Refineries, Oil Mills, Iron &amp; Steel, Pump Houses, and Sewage Plants.</p>
-            </div>
-
-        </div>
-    </div>
 
     <!-- ==========================================
          MAIN FOOTER GRID

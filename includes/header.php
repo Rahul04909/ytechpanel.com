@@ -40,39 +40,13 @@
         <!-- Logo Branding Left -->
         <div class="logo-container">
             <a href="index.php" class="brand-logo-main">
-                <div class="brand-icon-box">
-                    <!-- Detailed Control Panel SVG Icon -->
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Panel Enclosure -->
-                        <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#003a8c" stroke-width="2.5"/>
-                        <!-- Outer Bezel -->
-                        <rect x="7" y="7" width="34" height="34" rx="2.5" fill="#334155" stroke="#475569" stroke-width="1.5"/>
-                        <!-- Door Hinge line on the left -->
-                        <line x1="10" y1="10" x2="10" y2="38" stroke="#1e293b" stroke-width="2"/>
-                        <!-- Door lock on the right -->
-                        <circle cx="37" cy="24" r="2" fill="#cbd5e0" stroke="#475569" stroke-width="1"/>
-                        <!-- Status lights (3 phase) -->
-                        <circle cx="15" cy="14" r="2.5" fill="#ef4444"/> <!-- Red -->
-                        <circle cx="24" cy="14" r="2.5" fill="#eab308"/> <!-- Yellow -->
-                        <circle cx="33" cy="14" r="2.5" fill="#3b82f6"/> <!-- Blue -->
-                        <!-- Digital Screen -->
-                        <rect x="13" y="20" width="22" height="10" rx="1" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-                        <!-- Waveform or digital text -->
-                        <path d="M16 25 h3 l2 -3 l2 5 l2 -4 l2 2 h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <!-- Push Buttons / Dial -->
-                        <!-- Start Button (Green) -->
-                        <circle cx="17" cy="34" r="2.5" fill="#10b981"/>
-                        <!-- Stop Button (Red) -->
-                        <circle cx="24" cy="34" r="2.5" fill="#ef4444"/>
-                        <!-- Emergency Selector Dial -->
-                        <circle cx="31" cy="34" r="2.5" fill="#fbbf24"/>
-                    </svg>
-                </div>
-                <div class="brand-logo-text">
-                    <span class="logo-title">YTECH PANELS</span>
-                    <span class="logo-subtitle">ELECTRIFYING THE WORLD</span>
-                </div>
+                <img src="assets/logo.png" alt="YTech Panels Logo" class="header-logo-img">
             </a>
+            <!-- GST Identification Number -->
+            <div class="header-gst-badge">
+                <span class="gst-label">GSTIN</span>
+                <span class="gst-val">24AAACY2387B1Z4</span>
+            </div>
         </div>
 
         <!-- Contact details Right -->

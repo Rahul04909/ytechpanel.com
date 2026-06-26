@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="assets/css/hero.css">
     <!-- Footer Stylesheet -->
     <link rel="stylesheet" href="assets/css/footer.css">
+    <!-- Products Showcase Stylesheet -->
+    <link rel="stylesheet" href="assets/css/products.css">
+    <!-- About Us Section Stylesheet -->
+    <link rel="stylesheet" href="assets/css/about.css">
+    <!-- Clients Section Stylesheet -->
+    <link rel="stylesheet" href="assets/css/clients.css">
 </head>
 <body>
 
@@ -23,6 +29,9 @@
     <!-- Hero Slider Include -->
     <main class="main-content">
         <?php include 'components/hero.php'; ?>
+        <?php include 'components/about.php'; ?>
+        <?php include 'components/products.php'; ?>
+        <?php include 'components/clients.php'; ?>
     </main>
 
     <!-- Footer Include -->

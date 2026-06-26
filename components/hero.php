@@ -5,13 +5,13 @@
     <!-- Slides -->
     <ul class="hero-slides-wrapper">
         <li class="hero-slide active">
-            <img src="https://sthavistah.com/wp-content/uploads/2023/12/Untitled-design-2023-12-30T152400.670.png" alt="YTech Panel Slider Image 1" loading="eager">
+            <img src="assets/images/hero/slide-1.png" alt="YTech Panel Slider Image 1" loading="eager">
         </li>
         <li class="hero-slide">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNd1G6TuFjl7o_n_Fgu7pUyPNEmwbAHc_sC4vXEDaVXz0waVX7UuyY8ZY&s=10" alt="YTech Panel Slider Image 2" loading="lazy">
+            <img src="assets/images/hero/slide-2.png" alt="YTech Panel Slider Image 2" loading="lazy">
         </li>
         <li class="hero-slide">
-            <img src="https://cms.polycab.com/media/flvhmh10/rcbo-hero-banner.webp" alt="YTech Panel Slider Image 3" loading="lazy">
+            <img src="assets/images/hero/slide-3.png" alt="YTech Panel Slider Image 3" loading="lazy">
         </li>
     </ul>
 

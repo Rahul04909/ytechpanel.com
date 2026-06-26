@@ -2,10 +2,10 @@
 
 /* --- Design System Variables --- */
 :root {
-    --primary-color: #003a8c;       /* Premium corporate dark blue */
-    --primary-light: #0050b3;       /* Lighter corporate blue for hovers */
-    --accent-orange: #f26522;       /* Vibrant CTA orange */
-    --accent-orange-hover: #ff7c3b; /* Hover state for CTA */
+    --primary-color: #dc2626;       /* Premium corporate red */
+    --primary-light: #ef4444;       /* Lighter corporate red for hovers */
+    --accent-orange: #b91c1c;       /* Darker red accent for CTA buttons */
+    --accent-orange-hover: #991b1b; /* Darker red hover state */
     --text-dark: #222222;           /* Primary text */
     --text-muted: #555555;          /* Subtext/secondary text */
     --bg-light: #f5f7fa;            /* Light grey background */
@@ -160,10 +160,54 @@ button {
     gap: 16px;
 }
 
+/* GST Identification Badge styles */
+.header-gst-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 2px solid var(--border-color);
+    padding-left: 16px;
+    height: 40px;
+    margin-left: 4px;
+}
+
+.gst-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.gst-val {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .header-gst-badge {
+        display: none;
+    }
+}
+
 .brand-logo-main {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+/* Logo Image (PNG) */
+.header-logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    display: block;
 }
 
 .brand-icon-box {

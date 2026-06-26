@@ -1,0 +1,131 @@
+/* ==========================================
+   CLIENTS SHOWCASE SECTION
+   ========================================== */
+
+.clients-section {
+    padding: 80px 0;
+    background-color: #f8fafc; /* Alternating light background to frame the white logo cards */
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Section Header --- */
+.clients-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.clients-tagline {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.clients-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.clients-underline {
+    height: 3px;
+    background-color: var(--accent-orange);
+    width: 60px;
+    margin: 15px auto 0 auto;
+}
+
+/* --- Grid & Boxes Layout --- */
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 Column Layout on Desktop */
+    gap: 20px;
+}
+
+.client-logo-box {
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 0; /* Strictly sharp corners */
+    transition: var(--transition-smooth);
+}
+
+.client-logo-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Hover effect */
+.client-logo-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 58, 140, 0.08);
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVENESS)
+   ========================================== */
+
+@media (max-width: 1200px) {
+    .clients-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .clients-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-section {
+        padding: 60px 0;
+    }
+    
+    .clients-title {
+        font-size: 28px;
+    }
+    
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-title {
+        font-size: 24px;
+    }
+    
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .client-logo-box {
+        padding: 6px;
+    }
+}

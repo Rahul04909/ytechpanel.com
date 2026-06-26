@@ -1,3 +1,4 @@
+Set-Content -Path "d:\wamp\www\ytechpanel.com\admin\_generate_files.php" -Value @'
 <?php
 /**
  * Temporary script to generate header.php and profile.php
@@ -6,63 +7,64 @@
  */
 
 // ===== HEADER.PHP =====
-$header = '<?php
+$header = <<<EOT
+<?php
 // Require authentication
-require_once __DIR__ . \'/auth.php\';
+require_once __DIR__ . '/auth.php';
 requireAdminAuth();
 
-$currentPage = basename($_SERVER[\'SCRIPT_NAME\']);
+$currentPage = basename($_SERVER['SCRIPT_NAME']);
 
 $menuItems = [
     [
-        \'menuTitle\' => \'Dashboard\',
-        \'icon\' => \'fas fa-home\',
-        \'pages\' => [
-            [\'title\' => \'Home\', \'url\' => \'index.php\']
+        'menuTitle' => 'Dashboard',
+        'icon' => 'fas fa-home',
+        'pages' => [
+            ['title' => 'Home', 'url' => 'index.php']
         ],
     ],
     [
-        \'menuTitle\' => \'Clients\',
-        \'icon\' => \'fas fa-building\',
-        \'pages\' => [
-            [\'title\' => \'All Clients\', \'url\' => \'clients.php\'],
-            [\'title\' => \'Add Client\', \'url\' => \'client-add.php\']
+        'menuTitle' => 'Clients',
+        'icon' => 'fas fa-building',
+        'pages' => [
+            ['title' => 'All Clients', 'url' => 'clients.php'],
+            ['title' => 'Add Client', 'url' => 'client-add.php']
         ],
     ],
     [
-        \'menuTitle\' => \'Settings\',
-        \'icon\' => \'fas fa-cog\',
-        \'pages\' => [
-            [\'title\' => \'Profile\', \'url\' => \'profile.php\']
+        'menuTitle' => 'Settings',
+        'icon' => 'fas fa-cog',
+        'pages' => [
+            ['title' => 'Profile', 'url' => 'profile.php']
         ],
     ]
 ];
 
 $active_pageInfo = null;
 foreach ($menuItems as $menuItem) {
-    foreach ($menuItem[\'pages\'] as $page) {
-        if ($currentPage === $page[\'url\']) {
+    foreach ($menuItem['pages'] as $page) {
+        if ($currentPage === $page['url']) {
             $active_pageInfo = [
-                \'breadcrumb_Items\' => [
-                    [\'title\' => $menuItem[\'menuTitle\'], \'url\' => \'#\'],
-                    [\'title\' => $page[\'title\'], \'url\' => $page[\'url\']]
+                'breadcrumb_Items' => [
+                    ['title' => $menuItem['menuTitle'], 'url' => '#'],
+                    ['title' => $page['title'], 'url' => $page['url']]
                 ],
-                \'page_title\' => $page[\'title\'],
-                \'active_menu\' => $menuItem,
-                \'active_page\' => $page
+                'page_title' => $page['title'],
+                'active_menu' => $menuItem,
+                'active_page' => $page
             ];
             break 2;
         }
     }
 }
 
-$breadcrumb_Items = $active_pageInfo[\'breadcrumb_Items\'] ?? [];
-$page_title = $active_pageInfo[\'page_title\'] ?? \'\';
-$active_menu = $active_pageInfo[\'active_menu\'] ?? null;
-$active_page = $active_pageInfo[\'active_page\'] ?? null;
+$breadcrumb_Items = $active_pageInfo['breadcrumb_Items'] ?? [];
+$page_title = $active_pageInfo['page_title'] ?? '';
+$active_menu = $active_pageInfo['active_menu'] ?? null;
+$active_page = $active_pageInfo['active_page'] ?? null;
 
-if (empty($_SESSION[\'csrf_token\'])) {
-    $_SESSION[\'csrf_token\'] = bin2hex(random_bytes(32));
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 ?>
 <!DOCTYPE html>
@@ -155,8 +157,8 @@ if (empty($_SESSION[\'csrf_token\'])) {
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="./"><i class="fas fa-home"></i></a></li>
                         <?php foreach ($breadcrumb_Items as $item): ?>
-                            <li class="breadcrumb-item <?= $item[\'url\'] === \'#\' ? \'active\' : \'\' ?>">
-                                <?= $item[\'url\'] === \'#\' ? htmlspecialchars($item[\'title\']) : "<a href='" . htmlspecialchars($item[\'url\']) . "'>" . htmlspecialchars($item[\'title\']) . "</a>" ?>
+                            <li class="breadcrumb-item <?= $item['url'] === '#' ? 'active' : '' ?>">
+                                <?= $item['url'] === '#' ? htmlspecialchars($item['title']) : "<a href='" . htmlspecialchars($item['url']) . "'>" . htmlspecialchars($item['title']) . "</a>" ?>
                             </li>
                         <?php endforeach; ?>
                     </ol>
@@ -172,31 +174,31 @@ if (empty($_SESSION[\'csrf_token\'])) {
                 <div class="user-panel mt-3 pb-3 mb-3">
                     <a href="./profile.php" class="d-flex align-items-center">
                         <div class="image">
-                            <img src="./src/images/<?= htmlspecialchars($_SESSION[\'admin_profile_pic\'] ?? \'user-avtar.png\') ?>" class="img-circle" alt="User">
+                            <img src="./src/images/<?= htmlspecialchars($_SESSION['admin_profile_pic'] ?? 'user-avtar.png') ?>" class="img-circle" alt="User">
                         </div>
-                        <div class="info"><?= htmlspecialchars($_SESSION[\'admin_name\'] ?? \'Admin\') ?></div>
+                        <div class="info"><?= htmlspecialchars($_SESSION['admin_name'] ?? 'Admin') ?></div>
                     </a>
                 </div>
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                         <?php foreach ($menuItems as $menuItem): ?>
-                            <li class="nav-item has-treeview <?= $menuItem === $active_menu ? \'menu-open\' : \'\' ?>">
-                                <a class="nav-link <?= $menuItem === $active_menu ? \'active\' : \'\' ?>" href="#">
-                                    <i class="nav-icon <?= $menuItem[\'icon\'] ?>"></i>
+                            <li class="nav-item has-treeview <?= $menuItem === $active_menu ? 'menu-open' : '' ?>">
+                                <a class="nav-link <?= $menuItem === $active_menu ? 'active' : '' ?>" href="#">
+                                    <i class="nav-icon <?= $menuItem['icon'] ?>"></i>
                                     <p>
-                                        <?= $menuItem[\'menuTitle\'] ?>
-                                        <?php if (!empty($menuItem[\'pages\'])): ?>
+                                        <?= $menuItem['menuTitle'] ?>
+                                        <?php if (!empty($menuItem['pages'])): ?>
                                             <i class="right fas toggle-icon"></i>
                                         <?php endif; ?>
                                     </p>
                                 </a>
-                                <?php if (!empty($menuItem[\'pages\'])): ?>
+                                <?php if (!empty($menuItem['pages'])): ?>
                                     <ul class="nav nav-treeview">
-                                        <?php foreach ($menuItem[\'pages\'] as $page): ?>
+                                        <?php foreach ($menuItem['pages'] as $page): ?>
                                             <li class="nav-item">
-                                                <a href="<?= $page[\'url\'] ?>" class="nav-link <?= $page === $active_page ? \'active\' : \'\' ?>">
+                                                <a href="<?= $page['url'] ?>" class="nav-link <?= $page === $active_page ? 'active' : '' ?>">
                                                     <i class="fas fa-circle nav-icon submenu-icon"></i>
-                                                    <p><?= $page[\'title\'] ?></p>
+                                                    <p><?= $page['title'] ?></p>
                                                 </a>
                                             </li>
                                         <?php endforeach; ?>
@@ -218,29 +220,30 @@ if (empty($_SESSION[\'csrf_token\'])) {
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
-';
+EOT;
 
 file_put_contents(__DIR__ . '/header.php', $header);
 echo "header.php written (" . strlen($header) . " bytes)\n";
 
 
 // ===== PROFILE.PHP =====
-$profile = '<?php
+$profile = <<<EOT
+<?php
 /**
  * YTech Panels - Admin Profile Page
  */
-include \'./header.php\';
+include './header.php';
 
 $db = getDB();
-$adminId = (int) $_SESSION[\'admin_id\'];
+$adminId = (int) $_SESSION['admin_id'];
 
 $stmt = $db->prepare("SELECT id, name, email, mobile, username, profile_pic, last_login, created_at FROM admin_users WHERE id = :id");
-$stmt->execute([\':id\' => $adminId]);
+$stmt->execute([':id' => $adminId]);
 $admin = $stmt->fetch();
 
-$profilePicPath = !empty($admin[\'profile_pic\'])
-    ? \'./src/images/profile_picture/\' . htmlspecialchars($admin[\'profile_pic\'])
-    : \'./src/images/user-avtar.png\';
+$profilePicPath = !empty($admin['profile_pic'])
+    ? './src/images/profile_picture/' . htmlspecialchars($admin['profile_pic'])
+    : './src/images/user-avtar.png';
 ?>
 
 <div class="row">
@@ -250,17 +253,17 @@ $profilePicPath = !empty($admin[\'profile_pic\'])
                 <img src="<?= $profilePicPath ?>" alt="Profile" class="profile-avatar" id="avatarPreview">
                 <label class="avatar-overlay" for="avatarInput" title="Change profile picture"><i class="fas fa-camera"></i></label>
             </div>
-            <div class="profile-name-display"><?= htmlspecialchars($admin[\'name\']) ?></div>
-            <div class="profile-email-display"><?= htmlspecialchars($admin[\'email\']) ?></div>
+            <div class="profile-name-display"><?= htmlspecialchars($admin['name']) ?></div>
+            <div class="profile-email-display"><?= htmlspecialchars($admin['email']) ?></div>
         </div>
         <div class="profile-card">
             <div class="profile-card-header"><i class="fas fa-info-circle"></i> Account Information</div>
             <div class="profile-card-body">
                 <div class="info-grid">
-                    <div class="info-item"><label>Username</label><span><?= htmlspecialchars($admin[\'username\']) ?></span></div>
-                    <div class="info-item"><label>Mobile</label><span><?= htmlspecialchars($admin[\'mobile\'] ?? \'---\') ?></span></div>
-                    <div class="info-item"><label>Last Login</label><span><?= $admin[\'last_login\'] ? date(\'d M Y, h:i A\', strtotime($admin[\'last_login\'])) : \'---\' ?></span></div>
-                    <div class="info-item"><label>Member Since</label><span><?= $admin[\'created_at\'] ? date(\'d M Y\', strtotime($admin[\'created_at\'])) : \'---\' ?></span></div>
+                    <div class="info-item"><label>Username</label><span><?= htmlspecialchars($admin['username']) ?></span></div>
+                    <div class="info-item"><label>Mobile</label><span><?= htmlspecialchars($admin['mobile'] ?? '---') ?></span></div>
+                    <div class="info-item"><label>Last Login</label><span><?= $admin['last_login'] ? date('d M Y, h:i A', strtotime($admin['last_login'])) : '---' ?></span></div>
+                    <div class="info-item"><label>Member Since</label><span><?= $admin['created_at'] ? date('d M Y', strtotime($admin['created_at'])) : '---' ?></span></div>
                 </div>
             </div>
         </div>
@@ -271,13 +274,13 @@ $profilePicPath = !empty($admin[\'profile_pic\'])
             <div class="profile-card-body">
                 <form id="profileForm" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="update_profile">
-                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION[\'csrf_token\'] ?? \'\') ?>">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
                     <input type="file" name="profile_pic" id="avatarInput" accept="image/*" style="display:none;">
                     <div class="row">
-                        <div class="col-md-6"><div class="form-group"><label for="name">Full Name *</label><input type="text" class="form-control" id="name" name="name" value="<?= htmlspecialchars($admin[\'name\']) ?>" required maxlength="255"></div></div>
-                        <div class="col-md-6"><div class="form-group"><label for="email">Email Address *</label><input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($admin[\'email\']) ?>" required></div></div>
-                        <div class="col-md-6"><div class="form-group"><label for="mobile">Mobile Number</label><input type="text" class="form-control" id="mobile" name="mobile" value="<?= htmlspecialchars($admin[\'mobile\'] ?? \'\') ?>" placeholder="+91-XXXXXXXXXX"></div></div>
-                        <div class="col-md-6"><div class="form-group"><label for="username">Username *</label><input type="text" class="form-control" id="username" name="username" value="<?= htmlspecialchars($admin[\'username\']) ?>" required minlength="3" maxlength="50" pattern="[a-zA-Z0-9_]+"><small style="color:#646970;">Letters, numbers, underscores only.</small></div></div>
+                        <div class="col-md-6"><div class="form-group"><label for="name">Full Name *</label><input type="text" class="form-control" id="name" name="name" value="<?= htmlspecialchars($admin['name']) ?>" required maxlength="255"></div></div>
+                        <div class="col-md-6"><div class="form-group"><label for="email">Email Address *</label><input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($admin['email']) ?>" required></div></div>
+                        <div class="col-md-6"><div class="form-group"><label for="mobile">Mobile Number</label><input type="text" class="form-control" id="mobile" name="mobile" value="<?= htmlspecialchars($admin['mobile'] ?? '') ?>" placeholder="+91-XXXXXXXXXX"></div></div>
+                        <div class="col-md-6"><div class="form-group"><label for="username">Username *</label><input type="text" class="form-control" id="username" name="username" value="<?= htmlspecialchars($admin['username']) ?>" required minlength="3" maxlength="50" pattern="[a-zA-Z0-9_]+"><small style="color:#646970;">Letters, numbers, underscores only.</small></div></div>
                     </div>
                     <div class="mt-3"><button type="submit" class="wp-btn-primary" id="profileSubmitBtn"><i class="fas fa-save"></i> Save Changes</button></div>
                 </form>
@@ -288,7 +291,7 @@ $profilePicPath = !empty($admin[\'profile_pic\'])
             <div class="profile-card-body">
                 <form id="passwordForm">
                     <input type="hidden" name="action" value="change_password">
-                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION[\'csrf_token\'] ?? \'\') ?>">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
                     <div class="row">
                         <div class="col-md-12"><div class="form-group"><label for="current_password">Current Password *</label><input type="password" class="form-control" id="current_password" name="current_password" required autocomplete="current-password"></div></div>
                         <div class="col-md-6"><div class="form-group"><label for="new_password">New Password *</label><input type="password" class="form-control" id="new_password" name="new_password" required autocomplete="new-password"><div class="wp-password-strength"><div class="wp-password-strength-bar" id="strengthBar"></div></div><ul class="wp-password-reqs" id="passwordRequirements"><li id="req-length" class="unmet"><i class="fas fa-times-circle"></i> At least 8 characters</li><li id="req-upper" class="unmet"><i class="fas fa-times-circle"></i> One uppercase letter</li><li id="req-lower" class="unmet"><i class="fas fa-times-circle"></i> One lowercase letter</li><li id="req-number" class="unmet"><i class="fas fa-times-circle"></i> One number</li><li id="req-special" class="unmet"><i class="fas fa-times-circle"></i> One special character</li></ul></div></div>
@@ -373,10 +376,11 @@ $(document).ready(function(){
 });
 </script>
 
-<?php include \'./footer.php\'; ?>
-';
+<?php include './footer.php'; ?>
+EOT;
 
 file_put_contents(__DIR__ . '/profile.php', $profile);
 echo "profile.php written (" . strlen($profile) . " bytes)\n";
 
 echo "\nDone! Files generated successfully.\n";
+'@

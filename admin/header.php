@@ -23,6 +23,14 @@ $menuItems = [
         ],
     ],
     [
+        'menuTitle' => 'Products',
+        'icon' => 'fas fa-box',
+        'pages' => [
+            ['title' => 'All Products', 'url' => 'products.php'],
+            ['title' => 'Add Product', 'url' => 'product-add.php']
+        ],
+    ],
+    [
         'menuTitle' => 'Settings',
         'icon' => 'fas fa-cog',
         'pages' => [
@@ -73,6 +81,7 @@ if (empty($_SESSION['csrf_token'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <style>
         :root{--wp-admin-bg:#f0f0f1;--wp-white:#fff;--wp-dark:#1d2327;--wp-text:#3c434a;--wp-text-light:#646970;--wp-border:#c3c4c7;--wp-blue:#2271b1;--wp-blue-dark:#135e96;--wp-green:#00a32a;--wp-red:#b32d2e;--wp-yellow:#dba617;--wp-sidebar-bg:#1d2327;--wp-sidebar-text:#f0f0f1;--wp-sidebar-hover:#2c3338;--wp-sidebar-active:#2271b1}
         body{font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--wp-admin-bg);color:var(--wp-text)}

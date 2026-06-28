@@ -1,3 +1,21 @@
+<?php
+// Fetch active products for dynamic navigation dropdown
+if (!isset($db) || !$db) {
+    try {
+        require_once __DIR__ . '/../config/db.php';
+        $db = getDB();
+    } catch (\Exception $e) {
+        $db = null;
+    }
+}
+$navProducts = [];
+if ($db) {
+    $stmt = $db->prepare("SELECT id, title FROM products WHERE status = 1 ORDER BY sort_order ASC, id DESC LIMIT 15");
+    $stmt->execute();
+    $navProducts = $stmt->fetchAll();
+}
+?>
+
 <!-- ==========================================
      TOP BAR
      ========================================== -->
@@ -7,13 +25,7 @@
             India's #1 Electrical Control Panels Manufacturers and Exporters.
         </div>
         <div class="top-bar-right">
-            <a href="#products-range" class="top-bar-link">
-                <!-- Box/Cart Icon -->
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                </svg>
-                Products Range
-            </a>
+
             <a href="#service-amc" class="top-bar-link">
                 <!-- Wrench/Spanner Icon -->
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +57,7 @@
             <!-- GST Identification Number -->
             <div class="header-gst-badge">
                 <span class="gst-label">GSTIN</span>
-                <span class="gst-val">24AAACY2387B1Z4</span>
+                <span class="gst-val">06DKQPM5749K1ZC</span>
             </div>
         </div>
 
@@ -104,28 +116,22 @@
                 <a href="#about" class="menu-link">About Us</a>
             </li>
             
-            <!-- Products with Dropdown -->
+            <!-- Products with Dropdown (dynamic from DB) -->
             <li class="menu-item">
-                <a href="#products" class="menu-link">
+                <a href="products.php" class="menu-link">
                     Products
+                    <?php if (!empty($navProducts)): ?>
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+                    <?php endif; ?>
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#pcc-panels" class="dropdown-link">Power Control Centre (PCC)</a></li>
-                    <li><a href="#mcc-panels" class="dropdown-link">Motor Control Centre (MCC)</a></li>
-                    <li><a href="#apfc-panels" class="dropdown-link">APFC Panels</a></li>
-                    <li class="has-nested-dropdown">
-                        <a href="#automation-panels" class="dropdown-link">
-                            Automation Panels
-                        </a>
-                        <ul class="nested-dropdown-menu">
-                            <li><a href="#plc-panels" class="dropdown-link">PLC Control Panels</a></li>
-                            <li><a href="#scada-systems" class="dropdown-link">SCADA / HMI Systems</a></li>
-                            <li><a href="#vfd-panels" class="dropdown-link">VFD Panels</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#distribution-boards" class="dropdown-link">Distribution Boards</a></li>
+                <?php if (!empty($navProducts)): ?>
+                <ul class="dropdown-menu im-prod-dropdown">
+                    <?php foreach ($navProducts as $np): ?>
+                    <li><a href="product-details.php?id=<?= (int)$np['id'] ?>" class="dropdown-link"><?= htmlspecialchars($np['title']) ?></a></li>
+                    <?php endforeach; ?>
+                    <li class="im-drop-foot"><a href="products.php" class="dropdown-link">View All Products →</a></li>
                 </ul>
+                <?php endif; ?>
             </li>
             
             <!-- System Integrator with Dropdown -->
@@ -250,29 +256,22 @@
             <a href="#about" class="drawer-menu-link">About Us</a>
         </li>
         
-        <!-- Products Accordion -->
+        <!-- Products Accordion (dynamic from DB) -->
         <li class="drawer-menu-item has-accordion">
-            <a href="#" class="drawer-menu-link accordion-toggle">
+            <a href="products.php" class="drawer-menu-link accordion-toggle">
                 Products
+                <?php if (!empty($navProducts)): ?>
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
+                <?php endif; ?>
             </a>
+            <?php if (!empty($navProducts)): ?>
             <ul class="drawer-submenu">
-                <li><a href="#pcc-panels" class="drawer-submenu-link">Power Control Centre (PCC)</a></li>
-                <li><a href="#mcc-panels" class="drawer-submenu-link">Motor Control Centre (MCC)</a></li>
-                <li><a href="#apfc-panels" class="drawer-submenu-link">APFC Panels</a></li>
-                <li class="drawer-submenu-item has-nested-accordion">
-                    <a href="#" class="drawer-submenu-link nested-accordion-toggle">
-                        Automation Panels
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:10px; height:10px;"><polyline points="6 9 12 15 18 9"/></svg>
-                    </a>
-                    <ul class="drawer-nested-submenu">
-                        <li><a href="#plc-panels" class="drawer-nested-submenu-link">PLC Control Panels</a></li>
-                        <li><a href="#scada-systems" class="drawer-nested-submenu-link">SCADA / HMI Systems</a></li>
-                        <li><a href="#vfd-panels" class="drawer-nested-submenu-link">VFD Panels</a></li>
-                    </ul>
-                </li>
-                <li><a href="#distribution-boards" class="drawer-submenu-link">Distribution Boards</a></li>
+                <?php foreach ($navProducts as $np): ?>
+                <li><a href="product-details.php?id=<?= (int)$np['id'] ?>" class="drawer-submenu-link"><?= htmlspecialchars($np['title']) ?></a></li>
+                <?php endforeach; ?>
+                <li><a href="products.php" class="drawer-submenu-link" style="font-weight:600;color:var(--primary-color);">View All Products →</a></li>
             </ul>
+            <?php endif; ?>
         </li>
         
         <!-- System Integrator Accordion -->

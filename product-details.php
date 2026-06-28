@@ -246,11 +246,11 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                                 <div class="im-company-details">
                                     <div class="im-cd-row">
                                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#64748b" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                                        <span><strong>GSTIN</strong>: 07AAACY2387B1Z4</span>
+                                        <span><strong>GSTIN</strong>: 06DKQPM5749K1ZC</span>
                                     </div>
                                     <div class="im-cd-row">
                                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#64748b" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                        <span><strong>Registered Office</strong>: Plot No. 123, Sector 5, IMT Manesar, Gurugram, Haryana - 122050</span>
+                                        <span><strong>Registered Office</strong>: 502, J/T-5, 5th Floor, Happy Homes, Budena, Sector 86, Faridabad, Haryana - 121002</span>
                                     </div>
                                     <div class="im-cd-row">
                                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#64748b" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>

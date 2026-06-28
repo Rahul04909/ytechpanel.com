@@ -17,7 +17,7 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#service-amc">Service &amp; AMC</a></li>
                     <li><a href="#quality">Quality</a></li>
-                    <li><a href="#manufacturing">Manufacturing Facilities</a></li>
+                    <li><a href="manufacturing.php">Manufacturing Facilities</a></li>
                     <li><a href="#enquiry">Customer Enquiry</a></li>
                     <li><a href="#supplier-enquiry">Supplier Enquiry</a></li>
                     <li><a href="contact.php">Contact Us</a></li>

@@ -31,6 +31,16 @@ $menuItems = [
         ],
     ],
     [
+        'menuTitle' => 'Enquiries',
+        'icon' => 'fas fa-envelope',
+        'pages' => [
+            ['title' => 'Product Enquiries', 'url' => 'product-enquiries.php'],
+            ['title' => 'General Enquiries', 'url' => 'enquiries.php'],
+            ['title' => 'Quote Requests', 'url' => 'quotes.php'],
+            ['title' => 'Callback Requests', 'url' => 'callbacks.php']
+        ],
+    ],
+    [
         'menuTitle' => 'Settings',
         'icon' => 'fas fa-cog',
         'pages' => [

@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Fetch active products for dynamic navigation dropdown
 if (!isset($db) || !$db) {
     try {
@@ -33,7 +34,7 @@ if ($db) {
                 </svg>
                 Service & AMC
             </a>
-            <a href="#get-quote" class="top-bar-link top-bar-cta">
+            <a href="javascript:void(0)" onclick="openPopModal('modalQuote')" class="top-bar-link top-bar-cta">
                 <!-- Quote Document Icon -->
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
@@ -151,9 +152,9 @@ if ($db) {
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#send-enquiry" class="dropdown-link">Submit Enquiry</a></li>
-                    <li><a href="#request-callback" class="dropdown-link">Request Call Back</a></li>
-                    <li><a href="#custom-quote" class="dropdown-link">Custom Quote</a></li>
+                    <li><a href="javascript:void(0)" onclick="openPopModal('modalEnquiry')" class="dropdown-link">Submit Enquiry</a></li>
+                    <li><a href="javascript:void(0)" onclick="openPopModal('modalCallback')" class="dropdown-link">Request Call Back</a></li>
+                    <li><a href="javascript:void(0)" onclick="openPopModal('modalQuote')" class="dropdown-link">Custom Quote</a></li>
                 </ul>
             </li>
             
@@ -270,9 +271,9 @@ if ($db) {
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
             <ul class="drawer-submenu">
-                <li><a href="#send-enquiry" class="drawer-submenu-link">Submit Enquiry</a></li>
-                <li><a href="#request-callback" class="drawer-submenu-link">Request Call Back</a></li>
-                <li><a href="#custom-quote" class="drawer-submenu-link">Custom Quote</a></li>
+                <li><a href="javascript:void(0)" onclick="openPopModal('modalEnquiry')" class="drawer-submenu-link">Submit Enquiry</a></li>
+                <li><a href="javascript:void(0)" onclick="openPopModal('modalCallback')" class="drawer-submenu-link">Request Call Back</a></li>
+                <li><a href="javascript:void(0)" onclick="openPopModal('modalQuote')" class="drawer-submenu-link">Custom Quote</a></li>
             </ul>
         </li>
         
@@ -315,7 +316,7 @@ if ($db) {
             </div>
         </div>
 
-        <a href="#get-quote" class="drawer-footer-cta">
+        <a href="javascript:void(0)" onclick="openPopModal('modalQuote')" class="drawer-footer-cta">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; fill: currentColor;">
                 <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
             </svg>
@@ -323,6 +324,9 @@ if ($db) {
         </a>
     </div>
 </div>
+
+<!-- ====== POPUP MODALS ====== -->
+<?php include 'includes/popup-modals.php'; ?>
 
 <!-- ==========================================
      MOBILE NAVIGATION JAVASCRIPT

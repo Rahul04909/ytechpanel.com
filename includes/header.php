@@ -113,7 +113,7 @@ if ($db) {
                 <a href="#home" class="menu-link">Home</a>
             </li>
             <li class="menu-item">
-                <a href="#about" class="menu-link">About Us</a>
+                <a href="about.php" class="menu-link">About Us</a>
             </li>
             
             <!-- Products with Dropdown (dynamic from DB) -->
@@ -171,7 +171,7 @@ if ($db) {
             </li>
             
             <li class="menu-item">
-                <a href="#contact" class="menu-link">Contact Us</a>
+                <a href="contact.php" class="menu-link">Contact Us</a>
             </li>
         </ul>
 
@@ -253,7 +253,7 @@ if ($db) {
             <a href="#home" class="drawer-menu-link">Home</a>
         </li>
         <li class="drawer-menu-item">
-            <a href="#about" class="drawer-menu-link">About Us</a>
+            <a href="about.php" class="drawer-menu-link">About Us</a>
         </li>
         
         <!-- Products Accordion (dynamic from DB) -->
@@ -311,7 +311,7 @@ if ($db) {
         </li>
         
         <li class="drawer-menu-item">
-            <a href="#contact" class="drawer-menu-link">Contact Us</a>
+            <a href="contact.php" class="drawer-menu-link">Contact Us</a>
         </li>
     </ul>
 

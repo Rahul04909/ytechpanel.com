@@ -13,14 +13,14 @@
                 <h3 class="footer-col-title">Links</h3>
                 <ul class="footer-link-list">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="about.php">About Us</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#service-amc">Service &amp; AMC</a></li>
                     <li><a href="#quality">Quality</a></li>
                     <li><a href="#manufacturing">Manufacturing Facilities</a></li>
                     <li><a href="#enquiry">Customer Enquiry</a></li>
                     <li><a href="#supplier-enquiry">Supplier Enquiry</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
 

@@ -151,8 +151,8 @@
                 &copy; <?php echo date('Y'); ?> <strong>YTech Panels</strong>. All Rights Reserved. <span class="footer-designed-by">A website designed by <a href="https://mineib.com" target="_blank" rel="noopener noreferrer">Mineib Creative Technology</a></span>
             </p>
             <div class="footer-bottom-links">
-                <a href="#xml-sitemap">XML Sitemap</a>
-                <a href="#html-sitemap">HTML Sitemap</a>
+                <a href="sitemap.xml">XML Sitemap</a>
+                <a href="html-sitemap.php">HTML Sitemap</a>
                 <a href="#privacy-policy">Privacy Policy</a>
             </div>
         </div>

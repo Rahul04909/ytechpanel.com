@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ytechpanels.com/sitemap.xml
+
+# Disallow admin & sensitive paths
+Disallow: /admin/
+Disallow: /config/
+Disallow: /handlers/
+Disallow: /sql-insert/
+Disallow: /vendor/
+Disallow: /includes/
+Disallow: /components/
+Disallow: /src/
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /robots.txt
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /write_php_file.ps1
+
+# Crawl delay for polite crawling
+Crawl-delay: 10

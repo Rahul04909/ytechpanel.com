@@ -32,9 +32,11 @@ if (!is_array($gallery)) $gallery = [];
     .form-group label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px; display: block; }
     .form-control { border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 12px; font-size: 14px; width: 100%; transition: border-color 0.2s; }
     .form-control:focus { border-color: #2271b1; outline: none; box-shadow: 0 0 0 2px rgba(34,113,177,0.1); }
-    .upload-area { border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; text-align: center; cursor: pointer; background: #f8fafc; transition: all 0.2s; }
+    .upload-area { border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; text-align: center; cursor: pointer; background: #f8fafc; transition: all 0.2s; position: relative; overflow: hidden; }
     .upload-area:hover { border-color: #2271b1; background: #f0f4f8; }
-    .upload-area i { font-size: 24px; color: #94a3b8; margin-bottom: 8px; display: block; }
+    .upload-area input[type="file"] { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2; }
+    .upload-area i { font-size: 24px; color: #94a3b8; margin-bottom: 8px; display: block; pointer-events: none; }
+    .upload-area p { pointer-events: none; }
     .img-preview { max-width: 100%; max-height: 150px; object-fit: contain; margin-top: 10px; border-radius: 4px; border: 1px solid #e2e8f0; }
     .gallery-preview-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
     .gallery-item { position: relative; width: 100px; height: 100px; border: 1px solid #e2e8f0; border-radius: 4px; overflow: hidden; }
@@ -152,7 +154,7 @@ if (!is_array($gallery)) $gallery = [];
                     <div class="upload-area" id="featUploadArea">
                         <i class="fas fa-cloud-upload-alt"></i>
                         <p style="margin:0;font-size:12px;color:#646970;">Click to upload new image</p>
-                        <input type="file" name="featured_image" id="featInput" accept="image/*" style="display:none;">
+                        <input type="file" name="featured_image" id="featInput" accept="image/*">
                     </div>
                     <img id="featPreview" class="img-preview" src="<?= $product['featured_image'] ? '../uploads/products/featured/'.htmlspecialchars($product['featured_image']) : '' ?>" style="display:<?= $product['featured_image'] ? 'block' : 'none' ?>;">
                 </div>
@@ -164,7 +166,7 @@ if (!is_array($gallery)) $gallery = [];
                     <div class="upload-area" id="galleryUploadArea">
                         <i class="fas fa-images"></i>
                         <p style="margin:0;font-size:12px;color:#646970;">Click to add more images</p>
-                        <input type="file" name="gallery_images[]" id="galleryInput" accept="image/*" multiple style="display:none;">
+                        <input type="file" name="gallery_images[]" id="galleryInput" accept="image/*" multiple>
                     </div>
                     <div id="galleryPreviewContainer" class="gallery-preview-container">
                         <?php foreach($gallery as $gImg): ?>
@@ -198,7 +200,6 @@ $(document).ready(function() {
     });
 
     // Featured Image
-    $('#featUploadArea').click(function() { $('#featInput').click(); });
     $('#featInput').change(function(e) {
         if(e.target.files[0]) {
             var reader = new FileReader();
@@ -211,7 +212,6 @@ $(document).ready(function() {
     var galleryFiles = [];
     var removedExisting = [];
     
-    $('#galleryUploadArea').click(function() { $('#galleryInput').click(); });
     $('#galleryInput').change(function(e) {
         var files = e.target.files;
         for(var i=0; i<files.length; i++) {

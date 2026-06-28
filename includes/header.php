@@ -138,7 +138,7 @@ if ($db) {
                 <a href="manufacturing.php" class="menu-link">Manufacturing</a>
             </li>
             <li class="menu-item">
-                <a href="#quality" class="menu-link">Quality</a>
+                <a href="quality.php" class="menu-link">Quality</a>
             </li>
             <li class="menu-item">
                 <a href="clients.php" class="menu-link">Our Clients</a>
@@ -257,7 +257,7 @@ if ($db) {
             <a href="manufacturing.php" class="drawer-menu-link">Manufacturing</a>
         </li>
         <li class="drawer-menu-item">
-            <a href="#quality" class="drawer-menu-link">Quality</a>
+            <a href="quality.php" class="drawer-menu-link">Quality</a>
         </li>
         <li class="drawer-menu-item">
             <a href="clients.php" class="drawer-menu-link">Our Clients</a>

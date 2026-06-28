@@ -331,158 +331,179 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
         </div>
     </section>
 
-    <!-- ===== DESCRIPTION SECTION ===== -->
-    <section class="im-desc-section">
+    <!-- ===== DESCRIPTION + REVIEWS SIDE-BY-SIDE ===== -->
+    <section class="im-dr-section">
         <div class="container">
-            <div class="im-desc-card">
-                <h2 class="im-desc-heading">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#dc2626" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    Product Description
-                </h2>
-                <div class="im-desc-content">
-                    <?php if (!empty($product['description'])): ?>
-                        <?= $product['description'] ?>
-                    <?php else: ?>
-                        <div class="im-desc-placeholder">
-                            <p><strong>About this Product</strong></p>
-                            <div class="im-desc-section-block">
-                                <h3>About <?= htmlspecialchars($product['title']) ?></h3>
-                                <p><?= htmlspecialchars($product['title']) ?> is a premium-grade electrical control panel engineered by YTech Panels for demanding industrial and commercial applications. Manufactured in our ISO-certified facility in Gurugram, each panel undergoes rigorous quality assurance at every stage of production.</p>
-                            </div>
-                            <div class="im-desc-section-block">
-                                <h3>Key Specifications</h3>
-                                <ul>
-                                    <li><strong>Rated Voltage:</strong> 415V ±10%, 3-Phase, 50Hz</li>
-                                    <li><strong>Rated Current:</strong> 100A to 3200A (as per configuration)</li>
-                                    <li><strong>Busbar Rating:</strong> 630A to 3200A, Aluminium / Electrolytic Copper</li>
-                                    <li><strong>Enclosure Protection:</strong> IP55 / IP65 (as per requirement)</li>
-                                    <li><strong>Short Circuit Withstand:</strong> 50kA for 1 second</li>
-                                    <li><strong>Standards Compliance:</strong> IS 8623, IEC 61439, IS 4237</li>
-                                    <li><strong>Material:</strong> CRCA Steel Sheet, powder-coated (RAL 7032 / RAL 7035)</li>
-                                    <li><strong>Ambient Temperature:</strong> Up to 50°C</li>
-                                </ul>
-                            </div>
-                            <div class="im-desc-section-block">
-                                <h3>Construction &amp; Design</h3>
-                                <ul>
-                                    <li>Modular, compartmentalized design for safe maintenance and easy expansion</li>
-                                    <li>Sheet steel enclosure with anti-corrosive powder coating</li>
-                                    <li>Internal arc fault protection as per IEC TR 61641</li>
-                                    <li>Shrouded busbar system for enhanced operator safety</li>
-                                    <li>Cable entry from top / bottom with gland plate arrangement</li>
-                                    <li>Dust-tight and vermin-proof construction suitable for harsh environments</li>
-                                </ul>
-                            </div>
-                            <div class="im-desc-section-block">
-                                <h3>Applications</h3>
-                                <ul>
-                                    <li>Power distribution in industrial plants and manufacturing facilities</li>
-                                    <li>Commercial complexes, shopping malls, and high-rise buildings</li>
-                                    <li>Data centers, hospitals, and infrastructure projects</li>
-                                    <li>Water treatment plants, pumping stations, and sewage systems</li>
-                                    <li>Oil &amp; gas, cement, steel, textile, and pharmaceutical industries</li>
-                                    <li>Renewable energy installations (solar farms, wind power)</li>
-                                </ul>
-                            </div>
-                            <div class="im-desc-section-block">
-                                <h3>Why Choose YTech Panels?</h3>
-                                <ul>
-                                    <li><strong>10+ Years of Expertise</strong> — Trusted by 500+ B2B clients across India and 12+ international markets</li>
-                                    <li><strong>ISO 9001:2015 Certified</strong> — Stringent quality management systems in place</li>
-                                    <li><strong>In-House Testing Facility</strong> — Complete type testing including temperature rise, short circuit, and IP verification</li>
-                                    <li><strong>Custom Engineered Solutions</strong> — Panels designed as per your SLD and project specifications</li>
-                                    <li><strong>Pan-India Service</strong> — Dedicated project management and on-site commissioning support</li>
-                                    <li><strong>Competitive Pricing</strong> — Direct manufacturer pricing with no middlemen</li>
-                                </ul>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="im-dr-grid">
 
-    <!-- ===== REVIEWS SECTION ===== -->
-    <section class="im-reviews-section">
-        <div class="container">
-            <div class="im-reviews-card">
-                <div class="im-rev-header">
-                    <h2>
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#dc2626" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        Customer Reviews
-                    </h2>
-                </div>
-                <div class="im-rev-body">
-                    <?php if ($totalReviews > 0): ?>
-                        <div class="im-rev-summary">
-                            <div class="im-rs-left">
-                                <span class="im-rev-big"><?= $displayAvgRating ?></span>
-                                <span class="im-rev-stars"><?= starRow($displayAvgRating, 18) ?></span>
-                                <span class="im-rev-total"><?= $displayReviewText ?></span>
-                            </div>
-                            <div class="im-rs-bars">
-                                <?php for ($i = 5; $i >= 1; $i--): ?>
-                                    <?php $count = $ratingCounts[$i] ?? 0; $pct = $totalReviews > 0 ? round($count / $totalReviews * 100) : 0; ?>
-                                    <div class="im-rs-bar-row">
-                                        <span class="im-rs-bar-label"><?= $i ?><svg viewBox="0 0 24 24" width="11" height="11" fill="#f59e0b" stroke="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-                                        <div class="im-rs-bar-track"><div class="im-rs-bar-fill" style="width:<?= $pct ?>%"></div></div>
-                                        <span class="im-rs-bar-count"><?= $count ?></span>
+                <!-- LEFT: Description (narrower) -->
+                <div class="im-dr-desc">
+                    <div class="im-desc-card">
+                        <h2 class="im-desc-heading">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#dc2626" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            Product Description
+                        </h2>
+                        <div class="im-desc-content">
+                            <?php if (!empty($product['description'])): ?>
+                                <?= $product['description'] ?>
+                            <?php else: ?>
+                                <div class="im-desc-placeholder">
+                                    <p><strong>About this Product</strong></p>
+                                    <div class="im-desc-section-block">
+                                        <h3>About <?= htmlspecialchars($product['title']) ?></h3>
+                                        <p><?= htmlspecialchars($product['title']) ?> is a premium-grade electrical control panel engineered by YTech Panels for demanding industrial and commercial applications. Manufactured in our ISO-certified facility in Gurugram, each panel undergoes rigorous quality assurance at every stage of production.</p>
                                     </div>
-                                <?php endfor; ?>
-                            </div>
-                        </div>
-                        <div class="im-rev-list">
-                            <?php foreach ($reviews as $review): ?>
-                            <div class="im-rev-item">
-                                <div class="im-rev-avatar"><?= strtoupper(substr($review['name'], 0, 1)) ?></div>
-                                <div>
-                                    <div class="im-rev-name"><?= htmlspecialchars($review['name'])?></div>
-                                    <div class="im-rev-stars-sm"><?= starRow($review['rating'], 12) ?></div>
-                                    <p class="im-rev-text"><?= htmlspecialchars($review['review'])?></p>
+                                    <div class="im-desc-section-block">
+                                        <h3>Key Specifications</h3>
+                                        <ul>
+                                            <li><strong>Rated Voltage:</strong> 415V ±10%, 3-Phase, 50Hz</li>
+                                            <li><strong>Rated Current:</strong> 100A to 3200A (as per configuration)</li>
+                                            <li><strong>Busbar Rating:</strong> 630A to 3200A, Aluminium / Electrolytic Copper</li>
+                                            <li><strong>Enclosure Protection:</strong> IP55 / IP65 (as per requirement)</li>
+                                            <li><strong>Short Circuit Withstand:</strong> 50kA for 1 second</li>
+                                            <li><strong>Standards Compliance:</strong> IS 8623, IEC 61439, IS 4237</li>
+                                            <li><strong>Material:</strong> CRCA Steel Sheet, powder-coated (RAL 7032 / RAL 7035)</li>
+                                            <li><strong>Ambient Temperature:</strong> Up to 50°C</li>
+                                        </ul>
+                                    </div>
+                                    <div class="im-desc-section-block">
+                                        <h3>Construction &amp; Design</h3>
+                                        <ul>
+                                            <li>Modular, compartmentalized design for safe maintenance and easy expansion</li>
+                                            <li>Sheet steel enclosure with anti-corrosive powder coating</li>
+                                            <li>Internal arc fault protection as per IEC TR 61641</li>
+                                            <li>Shrouded busbar system for enhanced operator safety</li>
+                                            <li>Cable entry from top / bottom with gland plate arrangement</li>
+                                            <li>Dust-tight and vermin-proof construction suitable for harsh environments</li>
+                                        </ul>
+                                    </div>
+                                    <div class="im-desc-section-block">
+                                        <h3>Applications</h3>
+                                        <ul>
+                                            <li>Power distribution in industrial plants and manufacturing facilities</li>
+                                            <li>Commercial complexes, shopping malls, and high-rise buildings</li>
+                                            <li>Data centers, hospitals, and infrastructure projects</li>
+                                            <li>Water treatment plants, pumping stations, and sewage systems</li>
+                                            <li>Oil &amp; gas, cement, steel, textile, and pharmaceutical industries</li>
+                                            <li>Renewable energy installations (solar farms, wind power)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="im-desc-section-block">
+                                        <h3>Why Choose YTech Panels?</h3>
+                                        <ul>
+                                            <li><strong>10+ Years of Expertise</strong> — Trusted by 500+ B2B clients across India and 12+ international markets</li>
+                                            <li><strong>ISO 9001:2015 Certified</strong> — Stringent quality management systems in place</li>
+                                            <li><strong>In-House Testing Facility</strong> — Complete type testing including temperature rise, short circuit, and IP verification</li>
+                                            <li><strong>Custom Engineered Solutions</strong> — Panels designed as per your SLD and project specifications</li>
+                                            <li><strong>Pan-India Service</strong> — Dedicated project management and on-site commissioning support</li>
+                                            <li><strong>Competitive Pricing</strong> — Direct manufacturer pricing with no middlemen</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
-                    <?php else: ?>
-                        <div class="im-rev-empty">
-                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#cbd5e1" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <p>No reviews yet. Be the first to review this product!</p>
-                        </div>
-                    <?php endif; ?>
+                    </div>
                 </div>
-            </div>
-            <!-- Write Review Form -->
-            <div class="im-review-form-card">
-                <h3>Write a Review</h3>
-                <form id="imReviewForm" onsubmit="submitReview(event)">
-                    <input type="hidden" name="action" value="submit_review">
-                    <input type="hidden" name="product_id" value="<?= $productId ?>">
-                    <div class="im-rf-row">
-                        <label>Rating *</label>
-                        <div class="im-star-input">
-                            <input type="radio" name="rating" value="5" id="im-s5"><label for="im-s5"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
-                            <input type="radio" name="rating" value="4" id="im-s4"><label for="im-s4"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
-                            <input type="radio" name="rating" value="3" id="im-s3"><label for="im-s3"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
-                            <input type="radio" name="rating" value="2" id="im-s2"><label for="im-s2"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
-                            <input type="radio" name="rating" value="1" id="im-s1" checked><label for="im-s1"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+
+                <!-- RIGHT: Reviews Sidebar (IndiaMART style) -->
+                <div class="im-dr-rev">
+                    <div class="im-rev-sidebar">
+                        <div class="im-rsb-header">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span>Customer Reviews</span>
+                            <?php if ($totalReviews > 0): ?>
+                                <span class="im-rsb-count">(<?= $totalReviews ?>)</span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="im-rsb-body">
+                            <?php if ($totalReviews > 0): ?>
+                                <!-- Rating Summary -->
+                                <div class="im-rsb-summary">
+                                    <div class="im-rsb-rating">
+                                        <span class="im-rsb-big"><?= $displayAvgRating ?></span>
+                                        <span class="im-rsb-stars"><?= starRow($displayAvgRating, 13) ?></span>
+                                    </div>
+                                    <div class="im-rsb-bars">
+                                        <?php for ($i = 5; $i >= 1; $i--): ?>
+                                            <?php $count = $ratingCounts[$i] ?? 0; $pct = $totalReviews > 0 ? round($count / $totalReviews * 100) : 0; ?>
+                                            <div class="im-rsb-bar-row">
+                                                <span class="im-rsb-bar-label"><?= $i ?></span>
+                                                <div class="im-rsb-bar-track"><div class="im-rsb-bar-fill" style="width:<?= $pct ?>%"></div></div>
+                                                <span class="im-rsb-bar-count"><?= $count ?></span>
+                                            </div>
+                                        <?php endfor; ?>
+                                    </div>
+                                </div>
+
+                                <!-- Review List (compact) -->
+                                <div class="im-rsb-list">
+                                    <?php foreach ($reviews as $review): ?>
+                                    <div class="im-rsb-item">
+                                        <div class="im-rsb-item-top">
+                                            <div class="im-rsb-avatar"><?= strtoupper(substr($review['name'], 0, 1)) ?></div>
+                                            <div>
+                                                <div class="im-rsb-name"><?= htmlspecialchars($review['name'])?></div>
+                                                <div class="im-rsb-item-stars"><?= starRow($review['rating'], 10) ?></div>
+                                            </div>
+                                        </div>
+                                        <p class="im-rsb-text <?= strlen(htmlspecialchars($review['review'])) > 100 ? 'im-rsb-text-clamp' : '' ?>" onclick="this.classList.toggle('im-rsb-text-clamp')">
+                                            <?= htmlspecialchars($review['review']) ?>
+                                            <?php if (strlen(htmlspecialchars($review['review'])) > 100): ?>
+                                                <span class="im-rsb-readmore" onclick="event.stopPropagation();this.parentElement.classList.toggle('im-rsb-text-clamp')">Read more</span>
+                                            <?php endif; ?>
+                                        </p>
+                                    </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php else: ?>
+                                <div class="im-rsb-empty">
+                                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#cbd5e1" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <p>No reviews yet.</p>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Write Review Button (triggers inline form) -->
+                            <button class="im-rsb-write-btn" id="imRsbWriteBtn" onclick="document.getElementById('imRsbForm').classList.toggle('active');this.style.display='none'">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                                Write a Review
+                            </button>
+
+                            <!-- Inline Review Form -->
+                            <div class="im-rsb-form" id="imRsbForm">
+                                <form id="imReviewForm" onsubmit="submitReview(event)">
+                                    <input type="hidden" name="action" value="submit_review">
+                                    <input type="hidden" name="product_id" value="<?= $productId ?>">
+                                    <div class="im-rsb-f-row">
+                                        <label>Rating</label>
+                                        <div class="im-star-input im-star-input-sm">
+                                            <input type="radio" name="rating" value="5" id="im-s5"><label for="im-s5"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+                                            <input type="radio" name="rating" value="4" id="im-s4"><label for="im-s4"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+                                            <input type="radio" name="rating" value="3" id="im-s3"><label for="im-s3"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+                                            <input type="radio" name="rating" value="2" id="im-s2"><label for="im-s2"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+                                            <input type="radio" name="rating" value="1" id="im-s1" checked><label for="im-s1"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></label>
+                                        </div>
+                                    </div>
+                                    <div class="im-rsb-f-row">
+                                        <input type="text" class="im-rsb-input" name="name" placeholder="Your Name *" required>
+                                    </div>
+                                    <div class="im-rsb-f-row">
+                                        <input type="email" class="im-rsb-input" name="email" placeholder="Email (optional)">
+                                    </div>
+                                    <div class="im-rsb-f-row">
+                                        <textarea class="im-rsb-input im-rsb-textarea" name="review" placeholder="Share your experience *" required></textarea>
+                                    </div>
+                                    <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;">
+                                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+                                    </div>
+                                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
+                                    <button type="submit" class="im-btn im-btn-primary im-rsb-submit" id="imReviewSubmitBtn">Submit Review</button>
+                                    <div class="im-rf-success" id="imReviewSuccess"></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="im-rf-row">
-                        <input type="text" class="im-rf-input" name="name" placeholder="Your Name *" required>
-                    </div>
-                    <div class="im-rf-row">
-                        <input type="email" class="im-rf-input" name="email" placeholder="Your Email (optional)">
-                    </div>
-                    <div class="im-rf-row">
-                        <textarea class="im-rf-input im-rf-textarea" name="review" placeholder="Share your experience with this product *" required></textarea>
-                    </div>
-                    <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;">
-                        <input type="text" name="website" tabindex="-1" autocomplete="off">
-                    </div>
-                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
-                    <button type="submit" class="im-btn im-btn-primary" id="imReviewSubmitBtn">Submit Review</button>
-                    <div class="im-rf-success" id="imReviewSuccess"></div>
-                </form>
+                </div>
+
             </div>
         </div>
     </section>

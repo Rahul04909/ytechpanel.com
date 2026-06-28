@@ -17,7 +17,7 @@ if (empty($action) || $csrfToken !== ($_SESSION['csrf_token'] ?? '')) {
 }
 
 $db = getDB();
-$uploadDir = dirname(__DIR__) . '/uploads/products/';
+$uploadDir = dirname(__DIR__, 2) . '/uploads/products/';
 
 // Ensure directories exist
 $dirs = [

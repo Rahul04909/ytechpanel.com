@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
                 $stmt->execute([':id' => $deleteId]);
                 $product = $stmt->fetch();
                 if ($product) {
-                    $uploadDir = dirname(__DIR__) . '/uploads/products/';
+                    $uploadDir = dirname(__DIR__, 2) . '/uploads/products/';
                     if ($product['featured_image'] && file_exists($uploadDir . 'featured/' . $product['featured_image'])) unlink($uploadDir . 'featured/' . $product['featured_image']);
                     if ($product['og_image'] && file_exists($uploadDir . 'og/' . $product['og_image'])) unlink($uploadDir . 'og/' . $product['og_image']);
                     if ($product['catalog_pdf'] && file_exists($uploadDir . 'catalogs/' . $product['catalog_pdf'])) unlink($uploadDir . 'catalogs/' . $product['catalog_pdf']);

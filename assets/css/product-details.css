@@ -332,7 +332,17 @@
     font-weight: 700;
     color: var(--im-text);
     margin: 0;
-    padding: 14px 14px 8px;
+    padding: 14px 14px 4px;
+}
+
+.im-company-logo {
+    padding: 0 14px 8px;
+}
+.im-company-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .im-company-details {

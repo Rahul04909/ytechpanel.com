@@ -238,6 +238,11 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                                 </div>
                                 <h3 class="im-company-name">YTech Panels</h3>
 
+                                <!-- Logo added above GSTIN -->
+                                <div class="im-company-logo">
+                                    <img src="assets/logo.png" alt="YTech Panels Logo">
+                                </div>
+
                                 <div class="im-company-details">
                                     <div class="im-cd-row">
                                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#64748b" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>

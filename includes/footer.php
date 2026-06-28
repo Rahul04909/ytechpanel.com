@@ -111,16 +111,16 @@
                         </svg>
                     </a>
                     <a href="#instagram" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="currentColor" stroke="none"/>
+                            <circle cx="12" cy="12" r="5" style="fill:#141414" stroke="none"/>
+                            <circle cx="17.5" cy="6.5" r="1.5" style="fill:currentColor" stroke="none"/>
                         </svg>
                     </a>
                     <a href="#youtube" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23 12c0-1.1-.2-2.2-.5-3.2a2.8 2.8 0 0 0-2-2C17.9 6.4 12 6.4 12 6.4s-5.9 0-8.5.4a2.8 2.8 0 0 0-2 2C1.2 9.8 1 10.9 1 12s.2 2.2.5 3.2a2.8 2.8 0 0 0 2 2c2.6.4 8.5.4 8.5.4s5.9 0 8.5-.4a2.8 2.8 0 0 0 2-2c.3-1 .5-2.1.5-3.2z" fill="currentColor" stroke="none"/>
+                            <polygon points="10 8.5 16 12 10 15.5" style="fill:#141414" stroke="none"/>
                         </svg>
                     </a>
                 </div>
@@ -143,29 +143,12 @@
     </div>
 
     <!-- ==========================================
-         SEO KEYWORD BELT
-         ========================================== -->
-    <div class="footer-seo-belt">
-        <div class="container">
-            <p class="footer-seo-keywords">
-                <a href="#">Electrical Control Panels in Africa</a>
-                <a href="#">Electrical Control Panels in Kathmandu Nepal</a>
-                <a href="#">Electrical Control Panels in Dubai UAE</a>
-                <a href="#">Electrical Control Panels in Bangladesh</a>
-                <a href="#">Electrical Control Panels in Saudi Arabia</a>
-                <a href="#">Electrical Control Panels in Malaysia Singapore</a>
-            </p>
-            <p class="footer-seo-desc">We are well known manufacturers and exporters of TTA panels, PTTA panel, Total type tested panel, Partial type tested panel, Type tested panel, LV type tested panel, LT type tested panel, IEC 61439 panel, 61439 panel, IEC panel, Type tested electrical panel from India.</p>
-        </div>
-    </div>
-
-    <!-- ==========================================
          BOTTOM COPYRIGHT BAR
          ========================================== -->
     <div class="footer-bottom-bar">
         <div class="footer-bottom-inner">
             <p class="footer-copyright">
-                &copy; <?php echo date('Y'); ?> <strong>YTech Panels</strong>. All Rights Reserved.
+                &copy; <?php echo date('Y'); ?> <strong>YTech Panels</strong>. All Rights Reserved. <span class="footer-designed-by">A website designed by <a href="https://mineib.com" target="_blank" rel="noopener noreferrer">Mineib Creative Technology</a></span>
             </p>
             <div class="footer-bottom-links">
                 <a href="#xml-sitemap">XML Sitemap</a>

@@ -143,27 +143,50 @@
 .footer-link-list li {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: #9ca3af;
     font-size: 13.5px;
 }
 
 .footer-link-list li::before {
-    content: '—';
+    content: '›';
     color: #dc2626;
-    font-size: 11px;
+    font-size: 17px;
+    font-weight: 800;
     flex-shrink: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.footer-link-list li:hover::before {
+    transform: translateX(3px);
 }
 
 .footer-link-list a {
     color: #9ca3af;
     text-decoration: none;
     transition: color 0.2s ease, padding-left 0.2s ease;
+    position: relative;
+}
+
+.footer-link-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 0;
+    border-bottom: 1px dashed #dc2626;
+    transition: width 0.3s ease;
 }
 
 .footer-link-list a:hover {
     color: #dc2626;
     padding-left: 4px;
+}
+
+.footer-link-list a:hover::after {
+    width: 100%;
 }
 
 /* ---- QUICK CONTACT COLUMN ---- */
@@ -247,22 +270,26 @@
     width: 36px;
     height: 36px;
     border: 1px solid #374151;
-    border-radius: 4px;
+    border-radius: 6px;
     color: #9ca3af;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .footer-social a:hover {
     background-color: #dc2626;
     border-color: #dc2626;
     color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
 }
 
 .footer-social a svg {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     fill: currentColor;
+    stroke: none;
+    display: block;
 }
 
 /* Download Catalogue button */
@@ -350,7 +377,7 @@
 .footer-bottom-bar {
     background-color: #0d0d0d;
     border-top: 1px solid #1f2937;
-    padding: 16px 0;
+    padding: 18px 0;
 }
 
 .footer-bottom-inner {
@@ -361,16 +388,34 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer-copyright {
     font-size: 12.5px;
     color: #6b7280;
+    line-height: 1.6;
 }
 
 .footer-copyright strong {
     color: #9ca3af;
+}
+
+.footer-designed-by {
+    display: inline;
+    color: #6b7280;
+}
+
+.footer-designed-by a {
+    color: #9ca3af;
+    text-decoration: none;
+    border-bottom: 1px solid #374151;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-designed-by a:hover {
+    color: #dc2626;
+    border-color: #dc2626;
 }
 
 .footer-bottom-links {
@@ -383,11 +428,28 @@
     font-size: 12.5px;
     color: #6b7280;
     text-decoration: none;
+    position: relative;
     transition: color 0.2s ease;
+}
+
+.footer-bottom-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 0;
+    border-bottom: 1px dashed #9ca3af;
+    transition: width 0.3s ease;
 }
 
 .footer-bottom-links a:hover {
     color: #dc2626;
+}
+
+.footer-bottom-links a:hover::after {
+    width: 100%;
+    border-bottom-color: #dc2626;
 }
 
 /* ---- RESPONSIVE ---- */

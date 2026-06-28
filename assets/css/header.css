@@ -156,10 +156,10 @@ button {
     fill: currentColor;
 }
 
-/* Pulring/blinking animation for Get A Quote button */
+/* Pulsing/blinking animation for Get A Quote button — yellow glow */
 @keyframes imBlinkCta {
-    0%, 100% { background-color: var(--accent-orange); box-shadow: 0 0 0 0 rgba(220,38,38,0.3); }
-    50% { background-color: var(--primary-light); box-shadow: 0 0 12px 4px rgba(220,38,38,0.5); }
+    0%, 100% { background-color: #b91c1c; box-shadow: 0 0 0 0 rgba(250,204,21,0.3); }
+    50% { background-color: #eab308; box-shadow: 0 0 14px 6px rgba(250,204,21,0.6); }
 }
 
 @media (max-width: 992px) {

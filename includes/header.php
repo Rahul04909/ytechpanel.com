@@ -110,7 +110,7 @@ if ($db) {
         <!-- Desktop Nav items -->
         <ul class="desktop-menu">
             <li class="menu-item active">
-                <a href="#home" class="menu-link">Home</a>
+                <a href="index.php" class="menu-link">Home</a>
             </li>
             <li class="menu-item">
                 <a href="about.php" class="menu-link">About Us</a>
@@ -134,19 +134,6 @@ if ($db) {
                 <?php endif; ?>
             </li>
             
-            <!-- System Integrator with Dropdown -->
-            <li class="menu-item">
-                <a href="#system-integrator" class="menu-link">
-                    System Integrator
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#siemens-partnership" class="dropdown-link">Siemens Automation</a></li>
-                    <li><a href="#plc-scada-integration" class="dropdown-link">PLC/SCADA Integration</a></li>
-                    <li><a href="#drives-softstarters" class="dropdown-link">Drives & Soft Starters</a></li>
-                </ul>
-            </li>
-            
             <li class="menu-item">
                 <a href="#manufacturing" class="menu-link">Manufacturing</a>
             </li>
@@ -154,7 +141,7 @@ if ($db) {
                 <a href="#quality" class="menu-link">Quality</a>
             </li>
             <li class="menu-item">
-                <a href="#clientele" class="menu-link">Clientele</a>
+                <a href="clients.php" class="menu-link">Our Clients</a>
             </li>
             
             <!-- Enquiry with Dropdown -->
@@ -250,7 +237,7 @@ if ($db) {
     <!-- Drawer Navigation Links -->
     <ul class="drawer-menu-list">
         <li class="drawer-menu-item active">
-            <a href="#home" class="drawer-menu-link">Home</a>
+            <a href="index.php" class="drawer-menu-link">Home</a>
         </li>
         <li class="drawer-menu-item">
             <a href="about.php" class="drawer-menu-link">About Us</a>
@@ -274,19 +261,6 @@ if ($db) {
             <?php endif; ?>
         </li>
         
-        <!-- System Integrator Accordion -->
-        <li class="drawer-menu-item has-accordion">
-            <a href="#" class="drawer-menu-link accordion-toggle">
-                System Integrator
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>
-            </a>
-            <ul class="drawer-submenu">
-                <li><a href="#siemens-partnership" class="drawer-submenu-link">Siemens Automation</a></li>
-                <li><a href="#plc-scada-integration" class="drawer-submenu-link">PLC/SCADA Integration</a></li>
-                <li><a href="#drives-softstarters" class="drawer-submenu-link">Drives & Soft Starters</a></li>
-            </ul>
-        </li>
-        
         <li class="drawer-menu-item">
             <a href="#manufacturing" class="drawer-menu-link">Manufacturing</a>
         </li>
@@ -294,7 +268,7 @@ if ($db) {
             <a href="#quality" class="drawer-menu-link">Quality</a>
         </li>
         <li class="drawer-menu-item">
-            <a href="#clientele" class="drawer-menu-link">Clientele</a>
+            <a href="clients.php" class="drawer-menu-link">Our Clients</a>
         </li>
         
         <!-- Enquiry Accordion -->

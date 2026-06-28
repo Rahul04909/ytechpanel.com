@@ -304,21 +304,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                                             <textarea class="im-enq-input im-enq-textarea" name="message" placeholder="Your Message / Requirements *" required></textarea>
                                         </div>
 
-                                        <!-- OTP -->
-                                        <button type="button" class="im-otp-btn" id="imSendOtpBtn" onclick="sendOtp()">
-                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M22 6l-10 7L2 6"/></svg>
-                                            Verify Email via OTP
-                                        </button>
-                                        <div class="im-otp-section" id="imOtpSection">
-                                            <p class="im-otp-info">Enter 6-digit OTP sent to your email:</p>
-                                            <div class="im-otp-row">
-                                                <input type="text" class="im-enq-input im-otp-input" id="imOtpInput" placeholder="000000" maxlength="6" inputmode="numeric">
-                                                <button type="button" class="im-otp-verify-btn" id="imVerifyOtpBtn" onclick="verifyOtp()">Verify</button>
-                                            </div>
-                                            <div class="im-otp-status" id="imOtpStatus"></div>
-                                            <div class="im-otp-timer" id="imOtpTimer"></div>
-                                        </div>
-
+                                        <br>
                                         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
 
                                         <button type="submit" class="im-btn im-btn-primary im-enq-submit" id="imSubmitEnquiryBtn">
@@ -649,93 +635,6 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
             });
         });
     });
-
-    // ─── OTP Functions ───
-    let otpVerified = false, otpTimerInterval = null, otpCooldown = false;
-
-    function sendOtp() {
-        const email = document.getElementById('imEnquiryEmail').value.trim();
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            Swal.fire({icon:'warning', title:'Valid Email Required', text:'Please enter a valid email address first.'});
-            document.getElementById('imEnquiryEmail').focus();
-            return;
-        }
-        if (otpCooldown) return;
-        const btn = document.getElementById('imSendOtpBtn');
-        btn.disabled = true; btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation:spin 1s linear infinite;width:14px;height:14px;"><path d="M12 2v4"/></svg> Sending...';
-        fetch('handlers/product-enquiry-handler.php', {
-            method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-            body:'action=send_otp&email='+encodeURIComponent(email)
-        }).then(r=>r.json()).then(data=>{
-            if (data.success) {
-                document.getElementById('imOtpSection').classList.add('active');
-                document.getElementById('imOtpStatus').className='im-otp-status success';
-                document.getElementById('imOtpStatus').textContent='OTP sent to '+email;
-                document.getElementById('imOtpStatus').style.display='block';
-                startOtpTimer();
-                otpCooldown=true; setTimeout(()=>{otpCooldown=false;},60000);
-                btn.innerHTML='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M22 6l-10 7L2 6"/></svg> Resend OTP (60s)';
-                document.getElementById('imOtpInput').focus();
-            } else {
-                Swal.fire({icon:'error', title:'Failed', text:data.message});
-                btn.disabled=false; btn.innerHTML='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M22 6l-10 7L2 6"/></svg> Verify Email via OTP';
-            }
-        }).catch(()=>{
-            Swal.fire({icon:'error',title:'Network Error',text:'Please try again.'});
-            btn.disabled=false; btn.innerHTML='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M22 6l-10 7L2 6"/></svg> Verify Email via OTP';
-        });
-    }
-
-    function verifyOtp() {
-        const otp = document.getElementById('imOtpInput').value.trim();
-        const email = document.getElementById('imEnquiryEmail').value.trim();
-        if (!otp || otp.length!==6) {
-            document.getElementById('imOtpStatus').className='im-otp-status error';
-            document.getElementById('imOtpStatus').textContent='Please enter the 6-digit OTP.';
-            document.getElementById('imOtpStatus').style.display='block'; return;
-        }
-        const btn = document.getElementById('imVerifyOtpBtn');
-        btn.disabled=true; btn.textContent='Verifying...';
-        fetch('handlers/product-enquiry-handler.php', {
-            method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-            body:'action=verify_otp&otp='+encodeURIComponent(otp)+'&email='+encodeURIComponent(email)
-        }).then(r=>r.json()).then(data=>{
-            if(data.success){
-                otpVerified=true;
-                document.getElementById('imOtpStatus').className='im-otp-status success';
-                document.getElementById('imOtpStatus').textContent='✓ Email verified successfully!';
-                document.getElementById('imOtpStatus').style.display='block';
-                document.getElementById('imSendOtpBtn').innerHTML='✓ Email Verified';
-                document.getElementById('imSendOtpBtn').disabled=true;
-                document.getElementById('imSendOtpBtn').style.borderColor='#16a34a';
-                document.getElementById('imSendOtpBtn').style.color='#16a34a';
-                if(otpTimerInterval) clearInterval(otpTimerInterval);
-                document.getElementById('imOtpTimer').textContent='';
-                document.getElementById('imOtpInput').readOnly=true;
-                document.getElementById('imVerifyOtpBtn').textContent='Verified';
-                document.getElementById('imVerifyOtpBtn').disabled=true;
-            } else {
-                document.getElementById('imOtpStatus').className='im-otp-status error';
-                document.getElementById('imOtpStatus').textContent=data.message;
-                document.getElementById('imOtpStatus').style.display='block';
-                btn.disabled=false; btn.textContent='Verify';
-            }
-        }).catch(()=>{
-            document.getElementById('imOtpStatus').className='im-otp-status error';
-            document.getElementById('imOtpStatus').textContent='Network error. Please try again.';
-            document.getElementById('imOtpStatus').style.display='block';
-            btn.disabled=false; btn.textContent='Verify';
-        });
-    }
-
-    function startOtpTimer() {
-        if(otpTimerInterval) clearInterval(otpTimerInterval);
-        let s=300;
-        const t=document.getElementById('imOtpTimer');
-        function u(){const m=Math.floor(s/60),sec=s%60; t.textContent='OTP expires in '+m+':'+(sec<10?'0':'')+sec;}
-        u();
-        otpTimerInterval=setInterval(()=>{s--; u(); if(s<=0){clearInterval(otpTimerInterval); t.textContent='OTP expired. Please request a new one.';}},1000);
-    }
 
     // ─── Enquiry Form ───
     document.getElementById('imEnquiryForm').addEventListener('submit', function(e) {

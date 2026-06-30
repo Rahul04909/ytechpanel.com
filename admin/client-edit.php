@@ -45,7 +45,7 @@ if (!empty($client['logo'])) {
     .logo-upload-area:hover, .logo-upload-area.dragover { border-color: #2271b1; background: #f0f4ff; }
     .logo-upload-area i { font-size: 36px; color: #94a3b8; margin-bottom: 10px; display: block; }
     .logo-upload-area p { color: #646970; font-size: 13px; margin: 0; }
-    .logo-preview { max-width: 200px; max-height: 120px; object-fit: contain; margin: 10px auto; border: 1px solid #e2e8f0; }
+    .logo-preview { max-width: 200px; max-height: 120px; object-fit: contain; margin: 10px auto; display: none; border: 1px solid #e2e8f0; }
 </style>
 
 <div class="row">

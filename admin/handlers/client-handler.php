@@ -187,6 +187,11 @@ try {
 
 /**
  * Handle client logo file upload.
+ *
+ * Uses PHP's finfo to detect MIME type from the actual file content,
+ * which is far more reliable than relying on the browser-supplied
+ * $_FILES['type'] value (can be spoofed or vary between browsers).
+ *
  * @param array $file $_FILES entry
  * @return string|false Filename on success, false on failure
  */
@@ -195,30 +200,64 @@ function handleLogoUpload(array $file)
     $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
     $maxSize = 5 * 1024 * 1024; // 5MB
 
+    // ── Check PHP-level upload errors ──
     if ($file['error'] !== UPLOAD_ERR_OK) {
+        error_log('Logo upload error code: ' . $file['error']);
         return false;
     }
 
-    if (!in_array($file['type'], $allowedTypes, true)) {
-        return false;
-    }
-
+    // ── Check file size ──
     if ($file['size'] > $maxSize) {
+        error_log('Logo upload rejected: file too large (' . $file['size'] . ' bytes)');
         return false;
     }
 
+    // ── Detect actual MIME type from file content using finfo ──
+    if (!function_exists('finfo_open')) {
+        // Fallback: use browser-provided type (less reliable)
+        $detectedType = $file['type'];
+    } else {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $detectedType = finfo_file($finfo, $file['tmp_name']);
+        finfo_close($finfo);
+    }
+
+    // Normalise — some browsers/clients send these variants
+    $normalised = str_replace(
+        ['image/jpg', 'image/x-png', 'image/pjpeg', 'image/x-jpeg'],
+        ['image/jpeg', 'image/png',  'image/jpeg',  'image/jpeg'],
+        strtolower($detectedType)
+    );
+
+    if (!in_array($normalised, $allowedTypes, true)) {
+        error_log('Logo upload rejected: invalid MIME type (' . $detectedType . ')');
+        return false;
+    }
+
+    // ── Ensure upload directory exists ──
     $uploadDir = dirname(__DIR__) . '/uploads/client_logos/';
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0755, true);
+        if (!mkdir($uploadDir, 0755, true)) {
+            error_log('Logo upload failed: could not create upload directory');
+            return false;
+        }
     }
 
+    // ── Generate unique filename ──
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    // Sanitise extension — only allow known image extensions
+    $allowedExts = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    if (!in_array($ext, $allowedExts, true)) {
+        $ext = 'jpg'; // fallback
+    }
     $filename = 'client_' . time() . '_' . bin2hex(random_bytes(4)) . '.' . $ext;
     $destination = $uploadDir . $filename;
 
+    // ── Move uploaded file ──
     if (move_uploaded_file($file['tmp_name'], $destination)) {
         return $filename;
     }
 
+    error_log('Logo upload failed: move_uploaded_file could not save to ' . $destination);
     return false;
 }

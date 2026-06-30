@@ -80,8 +80,8 @@ $nextOrder = $maxOrder + 1;
                                 <div class="logo-upload-area" id="logoUploadArea">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <p>Click or drag logo image here<br><small>Allowed: JPG, PNG, GIF, WebP | Max: 5MB</small></p>
-                                    <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
                                 </div>
+                                <input type="file" name="logo" id="logoInput" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
                                 <img id="logoPreview" class="logo-preview" alt="Logo Preview">
                                 <small id="logoFileName" style="display:block; margin-top:6px; color:#646970;"></small>
                             </div>

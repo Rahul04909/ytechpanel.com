@@ -3,6 +3,16 @@
 # Enable RewriteEngine
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    Options FollowSymLinks
+
+    # Use index.php as the default entry point
+    DirectoryIndex index.php
+
+    # Map clean URLs like /about or /products to about.php or products.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L,QSA]
 
     # Route sitemap.xml to sitemap.php
     RewriteRule ^sitemap\.xml$ sitemap.php [L]
@@ -30,8 +40,13 @@
 
 # Security: Deny access to sensitive files
 <FilesMatch "\.(env|sql|md|log|lock)$">
-    Order Allow,Deny
-    Deny from all
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
 # Security: Deny directory listing

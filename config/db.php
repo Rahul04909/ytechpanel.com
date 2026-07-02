@@ -35,11 +35,13 @@ function getDB(): PDO
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
     } catch (PDOException $e) {
-        // In production, never expose the raw message
         $debug = ($_ENV['APP_DEBUG'] ?? 'false') === 'true';
         $msg   = $debug ? $e->getMessage() : 'Database connection failed. Please try again later.';
-        http_response_code(500);
-        die(json_encode(['error' => $msg]));
+        error_log('Database connection failed: ' . $e->getMessage());
+        if (!headers_sent()) {
+            http_response_code(500);
+        }
+        throw new RuntimeException($msg, 0, $e);
     }
 
     return $pdo;

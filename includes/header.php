@@ -26,7 +26,7 @@ if ($db) {
 <div class="top-bar">
     <div class="container">
         <div class="top-bar-left">
-            India's #1 Electrical Control Panels Manufacturers and Exporters.
+            Get The High Quality Electrical Panels & Switchgears You Deserve!
         </div>
         <div class="top-bar-right">
 

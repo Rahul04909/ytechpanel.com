@@ -5,7 +5,7 @@
  */
 
 $industries = [
-    ['name' => 'Manufacturing', 'image' => 'assets/images/industries/manufacturing.svg'],
+    ['name' => 'Manufacturing', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFITKCYjrUS582sjWA97CG9o3AfPlFHa5in3J6ulVHA&s=10'],
     ['name' => 'Food Processing', 'image' => 'assets/images/industries/food-processing.svg'],
     ['name' => 'Pharmaceuticals', 'image' => 'assets/images/industries/pharmaceuticals.svg'],
     ['name' => 'Textile Industries', 'image' => 'assets/images/industries/textile-industries.svg'],

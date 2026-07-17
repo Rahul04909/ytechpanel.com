@@ -4,7 +4,7 @@
 
 .industries-section {
     padding: 80px 0;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     border-top: 1px solid var(--border-color);
 }
 
@@ -42,13 +42,20 @@
     margin: 15px auto 0 auto;
 }
 
-/* --- Carousel Container --- */
+/* --- Carousel Layout --- */
 .industries-carousel {
     position: relative;
-    overflow: hidden;
-    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 10px;
+}
+
+.industries-viewport {
+    overflow: hidden;
+    flex: 1;
+    padding: 10px 0;
 }
 
 /* --- Track --- */
@@ -68,83 +75,94 @@
 .industries-card-inner {
     background-color: var(--bg-white);
     border: 1px solid #e2e8f0;
-    padding: 32px 20px;
-    text-align: center;
+    overflow: hidden;
     transition: var(--transition-smooth);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    aspect-ratio: 1 / 1;
 }
 
 .industries-card-inner:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
 }
 
-/* --- Icon --- */
-.industries-icon {
-    width: 64px;
-    height: 64px;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+/* --- Image --- */
+.industries-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #f8f8f8;
 }
 
-.industries-card-inner:hover .industries-icon {
-    color: var(--accent-orange);
-}
-
-.industries-icon svg {
+.industries-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: block;
+}
+
+.industries-card-inner:hover .industries-image img {
+    transform: scale(1.05);
 }
 
 /* --- Name --- */
 .industries-name {
     font-family: var(--font-heading);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text-dark);
     margin: 0;
+    padding: 16px 18px;
+    text-align: center;
     line-height: 1.3;
+    border-top: 1px solid #e2e8f0;
     transition: var(--transition-smooth);
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .industries-card-inner:hover .industries-name {
     color: var(--primary-color);
 }
 
-/* --- Navigation Dots --- */
-.industries-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 36px;
-}
-
-.industries-dot {
-    width: 10px;
-    height: 10px;
+/* --- Nav Buttons --- */
+.industries-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: #d1d5db;
-    border: none;
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    z-index: 2;
     transition: var(--transition-smooth);
-    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.industries-dot.active {
+.industries-btn:hover {
     background-color: var(--primary-color);
-    width: 28px;
-    border-radius: 5px;
+    border-color: var(--primary-color);
+    color: var(--bg-white);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
 }
 
-.industries-dot:hover {
-    background-color: var(--primary-light);
+.industries-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.industries-btn-prev {
+    margin-right: -24px;
+}
+
+.industries-btn-next {
+    margin-left: -24px;
 }
 
 /* ==========================================
@@ -155,8 +173,19 @@
     .industries-card {
         flex: 0 0 calc(100% / 3);
     }
-    .industries-card-inner {
-        padding: 28px 16px;
+    .industries-btn {
+        width: 42px;
+        height: 42px;
+    }
+    .industries-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    .industries-btn-prev {
+        margin-right: -18px;
+    }
+    .industries-btn-next {
+        margin-left: -18px;
     }
 }
 
@@ -173,19 +202,24 @@
     .industries-card {
         flex: 0 0 calc(100% / 2);
     }
-    .industries-card-inner {
-        padding: 24px 14px;
-        gap: 12px;
-    }
-    .industries-icon {
-        width: 52px;
-        height: 52px;
-    }
     .industries-name {
         font-size: 14px;
+        padding: 14px 14px;
+        min-height: 46px;
     }
-    .industries-dots {
-        margin-top: 28px;
+    .industries-btn {
+        width: 38px;
+        height: 38px;
+    }
+    .industries-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    .industries-btn-prev {
+        margin-right: -14px;
+    }
+    .industries-btn-next {
+        margin-left: -14px;
     }
 }
 
@@ -196,22 +230,23 @@
     .industries-title {
         font-size: 24px;
     }
-    .industries-card-inner {
-        padding: 24px 16px;
-        gap: 12px;
-    }
-    .industries-icon {
-        width: 48px;
-        height: 48px;
-    }
     .industries-name {
         font-size: 14px;
+        padding: 14px 16px;
+        min-height: auto;
     }
-    .industries-dot {
-        width: 8px;
-        height: 8px;
+    .industries-btn {
+        width: 36px;
+        height: 36px;
     }
-    .industries-dot.active {
-        width: 22px;
+    .industries-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    .industries-btn-prev {
+        margin-right: -10px;
+    }
+    .industries-btn-next {
+        margin-left: -10px;
     }
 }

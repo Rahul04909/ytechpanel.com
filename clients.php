@@ -30,6 +30,8 @@ try {
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/clients.css">
     <style>
+        html { overflow-x: hidden; }
+        body { overflow-x: hidden; }
         /* Page-specific overrides */
         .cl-hero {
             background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
@@ -115,6 +117,8 @@ try {
             align-items: center;
             justify-content: center;
             aspect-ratio: 2 / 1;
+            min-width: 0;
+            overflow: hidden;
             transition: all 0.3s;
         }
         .client-card-wrapper:hover {
@@ -123,7 +127,7 @@ try {
             transform: translateY(-3px);
         }
         .client-card-wrapper .client-logo-img {
-            width: 100%; height: 100%; object-fit: contain;
+            max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
         }
         .client-card-wrapper .client-text-fallback {
             font-family: 'Outfit', sans-serif;

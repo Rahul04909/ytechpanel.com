@@ -6,17 +6,17 @@
 
 $industries = [
     ['name' => 'Manufacturing', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFITKCYjrUS582sjWA97CG9o3AfPlFHa5in3J6ulVHA&s=10'],
-    ['name' => 'Food Processing', 'image' => 'assets/images/industries/food-processing.svg'],
-    ['name' => 'Pharmaceuticals', 'image' => 'assets/images/industries/pharmaceuticals.svg'],
-    ['name' => 'Textile Industries', 'image' => 'assets/images/industries/textile-industries.svg'],
-    ['name' => 'Chemical Plants', 'image' => 'assets/images/industries/chemical-plants.svg'],
-    ['name' => 'Water Treatment Plants', 'image' => 'assets/images/industries/water-treatment.svg'],
-    ['name' => 'Commercial Buildings', 'image' => 'assets/images/industries/commercial-buildings.svg'],
-    ['name' => 'Power Plants', 'image' => 'assets/images/industries/power-plants.svg'],
-    ['name' => 'Infrastructure Projects', 'image' => 'assets/images/industries/infrastructure-projects.svg'],
-    ['name' => 'Engineering Companies', 'image' => 'assets/images/industries/engineering-companies.svg'],
-    ['name' => 'OEM Manufacturers', 'image' => 'assets/images/industries/oem-manufacturers.svg'],
-    ['name' => 'Solar', 'image' => 'assets/images/industries/solar.svg']
+    ['name' => 'Food Processing', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3p11rBHCa7JY_Sempr_QbfTbf9TvkK9W4cRCIDeatzJsbI4hAN83Pf4-D&s=10'],
+    ['name' => 'Pharmaceuticals', 'image' => 'https://zenithbci.co.in/wp-content/uploads/2025/05/qa-and-qc-in-pharmaceutical-industry.jpg'],
+    ['name' => 'Textile Industries', 'image' => 'https://media.fortuneindia.com/fortune-india/2025-09-09/3ok9sa86/Textile_MG_9261%20copy.jpg?w=640&auto=format,compress&q=80'],
+    ['name' => 'Chemical Plants', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5YtFr5UGdbITRQKNAn6WJqPey6YQcAqNfhi38ulwD9Q&s=10'],
+    ['name' => 'Water Treatment Plants', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThDw0WRYaEwtyocJkKfSIMLsYGF2e5PALFjZWOGDIcuA&s=10'],
+    ['name' => 'Commercial Buildings', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDhKzbSGBTx9xIdJZKmNKQUv09s41YuiGXI006V16xqA&s=10'],
+    ['name' => 'Power Plants', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnpLs-qm1pb0N6ailMiJ_wLJL818iTLgfCqbOLHOiMow&s=10'],
+    ['name' => 'Infrastructure Projects', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlURc-Jx57I9mENiW74gaWOWZz-imQtMkpcanY3CTDLw&s=10'],
+    ['name' => 'Engineering Companies', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxVWgZm18-ROyFs4uaITBy_eHJkjyQ3uWjCf-Wml9gw&s=10'],
+    ['name' => 'OEM Manufacturers', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZHJ_B2ryR9hUzXB0XE5I83atl2DrUjD0NAfSIyxONoQ&s=10'],
+    ['name' => 'Solar', 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6yKWKjAr4CoPtmjV44fLYiXfHo-x4In8ywNPHToRTfg&s=10']
 ];
 ?>
 <section class="industries-section" id="industries-we-serve">

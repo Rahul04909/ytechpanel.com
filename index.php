@@ -23,6 +23,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="assets/css/about.css">
     <!-- Clients Section Stylesheet -->
     <link rel="stylesheet" href="assets/css/clients.css">
+    <!-- Industries Section Stylesheet -->
+    <link rel="stylesheet" href="assets/css/industries.css">
 </head>
 <body>
 
@@ -37,6 +39,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php include 'components/about.php'; ?>
         <?php include 'components/products.php'; ?>
         <?php include 'components/clients.php'; ?>
+        <?php include 'components/industries.php'; ?>
     </main>
 
     <!-- Footer Include -->

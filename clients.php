@@ -232,7 +232,7 @@ try {
                     ?>
                         <div class="client-card-wrapper">
                             <?php if ($hasWebsite): ?><a href="<?= htmlspecialchars($client['website']) ?>" target="_blank" rel="noopener noreferrer" class="client-logo-link"><?php endif; ?>
-                                <div class="client-logo-content" style="padding:20px 14px 8px;">
+                                <div class="client-logo-content">
                                     <?php if (!empty($logoSrc)): ?>
                                         <img src="<?= $logoSrc ?>" alt="<?= htmlspecialchars($client['name']) ?>" class="client-logo-img" loading="lazy">
                                     <?php else: ?>

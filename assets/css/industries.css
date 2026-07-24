@@ -149,7 +149,7 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--bg-white);
-    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+    box-shadow: 0 6px 16px rgba(11, 74, 131, 0.25);
 }
 
 .industries-btn svg {

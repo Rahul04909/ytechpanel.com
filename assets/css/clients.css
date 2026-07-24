@@ -98,7 +98,7 @@
 /* Hover effect */
 .client-logo-box:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 20px rgba(0, 58, 140, 0.08);
+    box-shadow: 0 8px 20px rgba(11, 74, 131, 0.08);
     transform: translateY(-3px);
 }
 

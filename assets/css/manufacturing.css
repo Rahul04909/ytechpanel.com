@@ -4,7 +4,7 @@
 
 /* --- Hero Banner --- */
 .mf-hero {
-    background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1d33 50%, #16213e 100%);
     padding: 60px 0 50px;
     position: relative;
     overflow: hidden;
@@ -16,7 +16,7 @@
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(11,74,131,0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -29,7 +29,7 @@
 .mf-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .mf-breadcrumb a:hover { color: #fff; }
 .mf-bc-sep { color: rgba(255,255,255,0.3); }
-.mf-bc-current { color: #dc2626; font-weight: 600; }
+.mf-bc-current { color: #f26522; font-weight: 600; }
 
 .mf-hero h1 {
     font-family: 'Outfit', sans-serif;
@@ -45,9 +45,9 @@
 .mf-tagline {
     font-family: 'Outfit', sans-serif;
     font-size: 13px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 1.5px; color: #dc2626; display: block; margin-bottom: 6px;
+    letter-spacing: 1.5px; color: #f26522; display: block; margin-bottom: 6px;
 }
-.mf-divider { width: 50px; height: 3px; background: #dc2626; margin-bottom: 20px; }
+.mf-divider { width: 50px; height: 3px; background: #f26522; margin-bottom: 20px; }
 .mf-section-header { text-align: center; margin-bottom: 40px; }
 .mf-section-header h2 {
     font-family: 'Outfit', sans-serif;
@@ -106,14 +106,14 @@
     transition: all 0.3s;
 }
 .mf-fac-item:hover {
-    border-color: #dc2626;
+    border-color: #f26522;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transform: translateY(-3px);
 }
 .mf-fac-icon {
     width: 52px; height: 52px;
     display: flex; align-items: center; justify-content: center;
-    background: #fef2f2; margin: 0 auto 14px;
+    background: #eff6ff; margin: 0 auto 14px;
 }
 .mf-fac-icon svg { width: 26px; height: 26px; }
 .mf-fac-item h4 {
@@ -170,13 +170,13 @@
     transition: all 0.3s;
 }
 .mf-fabpaint-card:hover {
-    border-color: #dc2626;
+    border-color: #f26522;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 .mf-fp-icon {
     width: 48px; height: 48px;
     display: flex; align-items: center; justify-content: center;
-    background: #fef2f2; margin-bottom: 16px;
+    background: #eff6ff; margin-bottom: 16px;
 }
 .mf-fp-icon svg { width: 24px; height: 24px; }
 .mf-fabpaint-card h3 {
@@ -194,7 +194,7 @@
 }
 .mf-fp-list li::before {
     content: ''; position: absolute; left: 0; top: 7px;
-    width: 6px; height: 6px; background: #dc2626; border-radius: 50%;
+    width: 6px; height: 6px; background: #f26522; border-radius: 50%;
 }
 
 /* --- Team Section --- */
@@ -215,7 +215,7 @@
     transition: all 0.3s;
 }
 .mf-team-card:hover {
-    border-color: #dc2626;
+    border-color: #f26522;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transform: translateY(-3px);
 }
@@ -228,7 +228,7 @@
     transition: border-color 0.3s;
     position: relative;
 }
-.mf-team-card:hover .mf-tm-avatar { border-color: #dc2626; }
+.mf-team-card:hover .mf-tm-avatar { border-color: #f26522; }
 .mf-tm-avatar img {
     width: 100%; height: 100%; object-fit: cover; display: block;
 }
@@ -247,7 +247,7 @@
 }
 .mf-tm-role {
     display: block;
-    font-size: 12px; font-weight: 600; color: #dc2626;
+    font-size: 12px; font-weight: 600; color: #f26522;
     margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.3px;
 }
 .mf-team-card p {
@@ -261,13 +261,13 @@
 .mf-cta .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .mf-cta-box {
     text-align: center; padding: 50px 40px;
-    background: linear-gradient(135deg, #141414 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1d33 100%);
     position: relative; overflow: hidden;
 }
 .mf-cta-box::before {
     content: ''; position: absolute; top: -50%; left: -20%;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242,101,34,0.08) 0%, transparent 70%);
     border-radius: 50%; pointer-events: none;
 }
 .mf-cta-box h2 {
@@ -286,10 +286,10 @@
     padding: 13px 28px; font-size: 14px; font-weight: 600;
     font-family: inherit; text-decoration: none; transition: all 0.2s;
 }
-.mf-btn-primary { background: #dc2626; color: #fff; }
-.mf-btn-primary:hover { background: #b91c1c; color: #fff; box-shadow: 0 4px 14px rgba(220,38,38,0.3); }
-.mf-btn-secondary { background: transparent; color: #dc2626; border: 1.5px solid #dc2626; }
-.mf-btn-secondary:hover { background: rgba(220,38,38,0.1); color: #dc2626; }
+.mf-btn-primary { background: #f26522; color: #fff; }
+.mf-btn-primary:hover { background: #d94e0f; color: #fff; box-shadow: 0 4px 14px rgba(242,101,34,0.3); }
+.mf-btn-secondary { background: transparent; color: #f26522; border: 1.5px solid #f26522; }
+.mf-btn-secondary:hover { background: rgba(242,101,34,0.1); color: #f26522; }
 
 /* ==========================================
    RESPONSIVE

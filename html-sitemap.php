@@ -65,7 +65,7 @@ try {
         }
 
         .sm-header a {
-            color: #dc2626;
+            color: #0b4a83;
             text-decoration: none;
         }
 
@@ -121,14 +121,14 @@ try {
         }
 
         .sm-link:hover {
-            border-color: #dc2626;
-            background: #fef2f2;
-            color: #dc2626;
+            border-color: #0b4a83;
+            background: #eff6ff;
+            color: #0b4a83;
             transform: translateX(2px);
         }
 
         .sm-link .sm-arrow {
-            color: #dc2626;
+            color: #0b4a83;
             font-size: 15px;
             font-weight: 700;
             flex-shrink: 0;
@@ -142,7 +142,7 @@ try {
             font-size: 10px;
             font-weight: 600;
             color: #ffffff;
-            background: #dc2626;
+            background: #0b4a83;
             padding: 2px 8px;
             border-radius: 10px;
             flex-shrink: 0;
@@ -161,7 +161,7 @@ try {
         }
 
         .sm-back:hover {
-            color: #dc2626;
+            color: #0b4a83;
         }
 
         @media (max-width: 640px) {
@@ -190,7 +190,7 @@ try {
         <!-- Main Pages -->
         <div class="sm-section">
             <h2 class="sm-section-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0b4a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                     <polyline points="9 22 9 12 15 12 15 22"/>
                 </svg>
@@ -212,7 +212,7 @@ try {
         <?php if (!empty($products)): ?>
         <div class="sm-section">
             <h2 class="sm-section-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0b4a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                 </svg>
                 All Products (<?= count($products) ?>)
@@ -231,7 +231,7 @@ try {
         <!-- Resources -->
         <div class="sm-section">
             <h2 class="sm-section-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0b4a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                     <polyline points="14 2 14 8 20 8"/>
                 </svg>

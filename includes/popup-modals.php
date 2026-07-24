@@ -34,7 +34,7 @@
     background: #f1f5f9; border: none; cursor: pointer;
     transition: all 0.2s; z-index: 2;
 }
-.pop-modal-close:hover { background: #fee2e2; color: #dc2626; }
+.pop-modal-close:hover { background: #eff6ff; color: #0b4a83; }
 .pop-modal-close svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
 
 .pop-modal-header {
@@ -46,7 +46,7 @@
     font-size: 18px; font-weight: 700; color: #1e293b; margin: 0;
     display: flex; align-items: center; gap: 8px;
 }
-.pop-modal-header h3 svg { width: 20px; height: 20px; fill: none; stroke: #dc2626; stroke-width: 2; stroke-linecap: round; }
+.pop-modal-header h3 svg { width: 20px; height: 20px; fill: none; stroke: #0b4a83; stroke-width: 2; stroke-linecap: round; }
 .pop-modal-header p {
     font-size: 13px; color: #64748b; margin: 4px 0 0;
 }
@@ -57,26 +57,26 @@
 .pop-label {
     display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 4px;
 }
-.pop-label .req { color: #dc2626; }
+.pop-label .req { color: #f26522; }
 .pop-input {
     width: 100%; padding: 9px 12px;
     border: 1.5px solid #e2e8f0; border-radius: 4px;
     font-size: 13px; font-family: inherit; color: #1e293b;
     box-sizing: border-box; transition: all 0.2s;
 }
-.pop-input:focus { outline: none; border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.06); }
+.pop-input:focus { outline: none; border-color: #0b4a83; box-shadow: 0 0 0 3px rgba(11,74,131,0.06); }
 .pop-textarea { resize: vertical; min-height: 64px; }
 .pop-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .pop-submit {
     width: 100%; padding: 10px 20px;
-    background: #dc2626; color: #fff; border: none;
+    background: #0b4a83; color: #fff; border: none;
     font-size: 14px; font-weight: 600; font-family: inherit;
     cursor: pointer; transition: all 0.2s;
     display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-.pop-submit:hover { background: #b91c1c; box-shadow: 0 4px 12px rgba(220,38,38,0.25); }
-.pop-submit:disabled { background: #fca5a5; cursor: not-allowed; box-shadow: none; }
+.pop-submit:hover { background: #07355f; box-shadow: 0 4px 12px rgba(11,74,131,0.25); }
+.pop-submit:disabled { background: #93c5fd; cursor: not-allowed; box-shadow: none; }
 .pop-submit svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; }
 @keyframes popSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 

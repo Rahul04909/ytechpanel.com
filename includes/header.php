@@ -193,7 +193,7 @@ if ($db) {
                 <!-- Detailed Control Panel SVG Icon -->
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Panel Enclosure -->
-                    <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#003a8c" stroke-width="2.5"/>
+                    <rect x="3" y="3" width="42" height="42" rx="5" fill="#1e293b" stroke="#0b4a83" stroke-width="2.5"/>
                     <!-- Outer Bezel -->
                     <rect x="7" y="7" width="34" height="34" rx="2.5" fill="#334155" stroke="#475569" stroke-width="1.5"/>
                     <!-- Door Hinge line on the left -->

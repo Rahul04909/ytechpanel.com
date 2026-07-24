@@ -150,7 +150,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
             <div class="im-quote-snippets">
                 <?php $quoteCount = 0; foreach ($reviews as $review): if ($quoteCount >= 2) break; $quoteCount++; ?>
                     <div class="im-quote-item">
-                        <svg viewBox="0 0 24 24" width="12" height="12" fill="#dc2626"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="#0b4a83"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
                         <span>"<?= htmlspecialchars(substr(strip_tags($review['review']), 0, 80)) ?><?= strlen(strip_tags($review['review'])) > 80 ? '...' : '' ?>"</span>
                     </div>
                 <?php endforeach; ?>
@@ -213,7 +213,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                                     Get Best Price
                                 </a>
                                 <a href="#imEnquirySection" class="im-btn im-btn-secondary" onclick="event.preventDefault();document.getElementById('imEnquirySection').scrollIntoView({behavior:'smooth'});">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0b4a83" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                                     Contact Supplier
                                 </a>
                             </div>
@@ -221,7 +221,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                             <?php if ($product['enable_catalog'] && !empty($product['catalog_pdf'])): ?>
                             <div class="im-catalog-link">
                                 <a href="uploads/products/catalogs/<?= htmlspecialchars($product['catalog_pdf']) ?>" target="_blank">
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0b4a83" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                     Download Product Catalog (PDF)
                                 </a>
                             </div>
@@ -260,7 +260,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
 
                                 <div class="im-company-links">
                                     <a href="#" class="im-cl-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0b4a83" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
                                         View Company Video
                                     </a>
                                     <div class="im-cl-item">
@@ -273,7 +273,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                             <!-- Enquiry Form (Compact) -->
                             <div class="im-enquiry-card" id="imEnquirySection">
                                 <div class="im-enq-header">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#dc2626" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0b4a83" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                                     <span>Send Enquiry</span>
                                 </div>
                                 <div class="im-enq-body">
@@ -331,7 +331,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                 <div class="im-dr-desc">
                     <div class="im-desc-card">
                         <h2 class="im-desc-heading">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#dc2626" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0b4a83" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                             Product Description
                         </h2>
                         <div class="im-desc-content">
@@ -400,7 +400,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
                 <div class="im-dr-rev">
                     <div class="im-rev-sidebar">
                         <div class="im-rsb-header">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#dc2626" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0b4a83" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             <span>Customer Reviews</span>
                             <?php if ($totalReviews > 0): ?>
                                 <span class="im-rsb-count">(<?= $totalReviews ?>)</span>
@@ -675,7 +675,7 @@ $schemaJson = !empty($product['schema_json']) ? $product['schema_json'] : '';
             } else {
                 msg.textContent=data.message;
                 msg.className='im-rf-success active';
-                msg.style.borderColor='#fecaca'; msg.style.background='#fef2f2'; msg.style.color='#dc2626';
+                msg.style.borderColor='#bfdbfe'; msg.style.background='#eff6ff'; msg.style.color='#0b4a83';
             }
             btn.disabled=false; btn.textContent='Submit Review';
             setTimeout(()=>{msg.className='im-rf-success';},6000);

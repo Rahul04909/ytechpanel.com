@@ -34,7 +34,7 @@ try {
         body { overflow-x: hidden; }
         /* Page-specific overrides */
         .cl-hero {
-            background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, #0a1628 0%, #0f1d33 50%, #16213e 100%);
             padding: 60px 0 50px;
             position: relative;
             overflow: hidden;
@@ -46,7 +46,7 @@ try {
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(11,74,131,0.08) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -57,7 +57,7 @@ try {
             left: -10%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(220,38,38,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(11,74,131,0.05) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -70,7 +70,7 @@ try {
         .cl-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
         .cl-breadcrumb a:hover { color: #fff; }
         .cl-bc-sep { color: rgba(255,255,255,0.3); }
-        .cl-bc-current { color: #dc2626; font-weight: 600; }
+        .cl-bc-current { color: #0b4a83; font-weight: 600; }
 
         .cl-hero h1 {
             font-family: 'Outfit', sans-serif;
@@ -95,7 +95,7 @@ try {
         }
         .cl-stat-num {
             font-family: 'Outfit', sans-serif;
-            font-size: 32px; font-weight: 800; color: #dc2626;
+            font-size: 32px; font-weight: 800; color: #0b4a83;
             display: block; margin-bottom: 4px;
         }
         .cl-stat-label { font-size: 14px; color: #64748b; }
@@ -122,7 +122,7 @@ try {
             transition: all 0.3s;
         }
         .client-card-wrapper:hover {
-            border-color: #dc2626;
+            border-color: #0b4a83;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             transform: translateY(-3px);
         }

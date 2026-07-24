@@ -16,7 +16,7 @@
 
 /* --- Section Header Bar --- */
 .products-header-bar {
-    background-color: var(--primary-color); /* Brand deep blue (#003a8c) */
+    background-color: var(--primary-color); /* Brand blue (#0b4a83) */
     color: var(--bg-white);
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
     padding: 18px 30px;
     margin-bottom: 40px;
     border-radius: 0; /* STRICTLY sharp corners */
-    box-shadow: 0 4px 10px rgba(0, 58, 140, 0.1);
+    box-shadow: 0 4px 10px rgba(11, 74, 131, 0.1);
 }
 
 .products-header-title {
@@ -113,7 +113,7 @@
 /* Card Hover Effects */
 .product-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0, 58, 140, 0.08);
+    box-shadow: 0 10px 20px rgba(11, 74, 131, 0.08);
     transform: translateY(-4px); /* Professional subtle lift */
 }
 

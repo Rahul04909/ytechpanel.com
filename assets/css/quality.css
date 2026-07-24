@@ -4,14 +4,14 @@
 
 /* --- Hero --- */
 .ql-hero {
-    background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1d33 50%, #16213e 100%);
     padding: 60px 0 50px;
     position: relative; overflow: hidden;
 }
 .ql-hero::before {
     content: ''; position: absolute; top: -50%; right: -20%;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(11,74,131,0.08) 0%, transparent 70%);
     border-radius: 50%; pointer-events: none;
 }
 .ql-hero .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
@@ -23,7 +23,7 @@
 .ql-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .ql-breadcrumb a:hover { color: #fff; }
 .ql-bc-sep { color: rgba(255,255,255,0.3); }
-.ql-bc-current { color: #dc2626; font-weight: 600; }
+.ql-bc-current { color: #f26522; font-weight: 600; }
 
 .ql-hero h1 {
     font-family: 'Outfit', sans-serif;
@@ -39,9 +39,9 @@
 .ql-tagline {
     font-family: 'Outfit', sans-serif;
     font-size: 13px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 1.5px; color: #dc2626; display: block; margin-bottom: 6px;
+    letter-spacing: 1.5px; color: #f26522; display: block; margin-bottom: 6px;
 }
-.ql-divider { width: 50px; height: 3px; background: #dc2626; margin-bottom: 20px; }
+.ql-divider { width: 50px; height: 3px; background: #f26522; margin-bottom: 20px; }
 .ql-section-header { text-align: center; margin-bottom: 40px; }
 .ql-section-header h2 {
     font-family: 'Outfit', sans-serif;
@@ -84,7 +84,7 @@
 }
 .ql-badge-item {
     display: flex; align-items: center; gap: 6px;
-    padding: 8px 14px; background: #fef2f2; border: 1px solid #fecaca;
+    padding: 8px 14px; background: #eff6ff; border: 1px solid #bfdbfe;
     font-size: 12px; font-weight: 600; color: #1e293b;
 }
 .ql-badge-item svg { width: 16px; height: 16px; flex-shrink: 0; }
@@ -107,7 +107,7 @@
     transition: all 0.3s;
 }
 .ql-pillar-card:hover {
-    border-color: #dc2626;
+    border-color: #f26522;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transform: translateY(-3px);
 }
@@ -142,11 +142,11 @@
     padding: 20px; border: 1px solid #e2e8f0;
     transition: all 0.3s;
 }
-.ql-test-item:hover { border-color: #dc2626; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+.ql-test-item:hover { border-color: #f26522; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
 .ql-test-icon {
     width: 48px; height: 48px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
-    background: #fef2f2;
+    background: #eff6ff;
 }
 .ql-test-icon svg { width: 24px; height: 24px; }
 .ql-test-item h4 {
@@ -207,7 +207,7 @@
 .ql-step-num {
     width: 40px; height: 40px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
-    background: #dc2626; color: #fff;
+    background: #f26522; color: #fff;
     font-family: 'Outfit', sans-serif;
     font-size: 16px; font-weight: 700; position: relative; z-index: 2;
 }
@@ -233,13 +233,13 @@
 .ql-cta .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .ql-cta-box {
     text-align: center; padding: 50px 40px;
-    background: linear-gradient(135deg, #141414 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1d33 100%);
     position: relative; overflow: hidden;
 }
 .ql-cta-box::before {
     content: ''; position: absolute; top: -50%; left: -20%;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242,101,34,0.08) 0%, transparent 70%);
     border-radius: 50%; pointer-events: none;
 }
 .ql-cta-box h2 {
@@ -258,10 +258,10 @@
     padding: 13px 28px; font-size: 14px; font-weight: 600;
     font-family: inherit; text-decoration: none; transition: all 0.2s;
 }
-.ql-btn-primary { background: #dc2626; color: #fff; }
-.ql-btn-primary:hover { background: #b91c1c; color: #fff; box-shadow: 0 4px 14px rgba(220,38,38,0.3); }
-.ql-btn-secondary { background: transparent; color: #dc2626; border: 1.5px solid #dc2626; }
-.ql-btn-secondary:hover { background: rgba(220,38,38,0.1); color: #dc2626; }
+.ql-btn-primary { background: #f26522; color: #fff; }
+.ql-btn-primary:hover { background: #d94e0f; color: #fff; box-shadow: 0 4px 14px rgba(242,101,34,0.3); }
+.ql-btn-secondary { background: transparent; color: #f26522; border: 1.5px solid #f26522; }
+.ql-btn-secondary:hover { background: rgba(242,101,34,0.1); color: #f26522; }
 
 /* ==========================================
    RESPONSIVE

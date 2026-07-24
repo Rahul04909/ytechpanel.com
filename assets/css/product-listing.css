@@ -10,7 +10,7 @@
 
 /* --- Page Banner --- */
 .product-listing-banner {
-    background: linear-gradient(135deg, #141414 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #0f1d33 50%, #16213e 100%);
     padding: 60px 0 50px;
     position: relative;
     overflow: hidden;
@@ -23,7 +23,7 @@
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(11, 74, 131, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -35,7 +35,7 @@
     left: -10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(11, 74, 131, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -72,7 +72,7 @@
 }
 
 .product-listing-breadcrumb .current {
-    color: #dc2626;
+    color: #0b4a83;
     font-weight: 600;
 }
 
@@ -157,8 +157,8 @@
 
 .product-search-input:focus {
     outline: none;
-    border-color: #dc2626;
-    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    border-color: #0b4a83;
+    box-shadow: 0 0 0 3px rgba(11, 74, 131, 0.1);
     background: #fff;
 }
 
@@ -198,7 +198,7 @@
 
 .sort-select:focus {
     outline: none;
-    border-color: #dc2626;
+    border-color: #0b4a83;
 }
 
 /* --- Products Grid Section --- */
@@ -232,7 +232,7 @@
 }
 
 .product-listing-card:hover {
-    border-color: #dc2626;
+    border-color: #0b4a83;
     box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
 }
@@ -271,7 +271,7 @@
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #dc2626;
+    background: #0b4a83;
     color: #fff;
     font-size: 10px;
     font-weight: 700;
@@ -299,7 +299,7 @@
 }
 
 .product-listing-card:hover .card-title {
-    color: #dc2626;
+    color: #0b4a83;
 }
 
 .product-listing-card .card-excerpt {
@@ -332,7 +332,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #dc2626;
+    background: #0b4a83;
     color: #fff;
     padding: 8px 18px;
     font-size: 12px;
@@ -345,7 +345,7 @@
 }
 
 .product-listing-card .card-enquire-btn:hover {
-    background: #b91c1c;
+    background: #d94e0f;
     color: #fff;
     gap: 10px;
 }
@@ -377,7 +377,7 @@
 }
 
 .product-listing-card .card-view-btn:hover {
-    color: #dc2626;
+    color: #0b4a83;
 }
 
 .product-listing-card .card-view-btn svg {
@@ -444,14 +444,14 @@
 }
 
 .product-listing-pagination a:hover {
-    border-color: #dc2626;
-    color: #dc2626;
-    background: #fef2f2;
+    border-color: #0b4a83;
+    color: #0b4a83;
+    background: #eff6ff;
 }
 
 .product-listing-pagination .active {
-    background: #dc2626;
-    border-color: #dc2626;
+    background: #0b4a83;
+    border-color: #0b4a83;
     color: #fff;
     font-weight: 600;
 }

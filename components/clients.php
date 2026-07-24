@@ -32,40 +32,34 @@ try {
         <?php if (!empty($clients)): ?>
             <div class="clients-grid">
                 <?php foreach ($clients as $client): ?>
-                    <div class="client-logo-box" <?php if (!empty($client['description'])): ?>title="<?= htmlspecialchars($client['description']) ?>"<?php endif; ?>>
-                        <div class="client-logo-content">
-                            <?php
-                            // Determine logo source: data URI (SVG from DB) or uploaded file
-                            $logoSrc = '';
-                            if (!empty($client['logo'])) {
-                                if (strpos($client['logo'], 'data:') === 0) {
-                                    $logoSrc = $client['logo'];
-                                } else {
-                                    $logoSrc = 'admin/uploads/client_logos/' . htmlspecialchars($client['logo']);
-                                }
-                            }
-                            ?>
-
-                            <?php if (!empty($logoSrc)): ?>
-                                <?php if (strpos($logoSrc, 'data:') === 0): ?>
-                                    <!-- Data URI (SVG embedded in DB) -->
-                                    <img src="<?= $logoSrc ?>" alt="<?= htmlspecialchars($client['name']) ?>" class="client-logo-img">
+                    <?php
+                    $logoSrc = '';
+                    if (!empty($client['logo'])) {
+                        if (strpos($client['logo'], 'data:') === 0) {
+                            $logoSrc = $client['logo'];
+                        } else {
+                            $logoSrc = 'admin/uploads/client_logos/' . htmlspecialchars($client['logo']);
+                        }
+                    }
+                    $hasWebsite = !empty($client['website']);
+                    $tag = $hasWebsite ? 'a' : 'div';
+                    $href = $hasWebsite ? ' href="' . htmlspecialchars($client['website']) . '" target="_blank" rel="noopener noreferrer"' : '';
+                    ?>
+                    <<?= $tag . $href ?> class="client-logo-link">
+                        <div class="client-logo-box" <?php if (!empty($client['description'])): ?>title="<?= htmlspecialchars($client['description']) ?>"<?php endif; ?>>
+                            <div class="client-logo-content">
+                                <?php if (!empty($logoSrc)): ?>
+                                    <img src="<?= $logoSrc ?>" alt="<?= htmlspecialchars($client['name']) ?>" class="client-logo-img" loading="lazy">
                                 <?php else: ?>
-                                    <!-- Uploaded image file -->
-                                    <img src="<?= $logoSrc ?>" alt="<?= htmlspecialchars($client['name']) ?>" class="client-logo-img">
+                                    <div class="client-text-fallback"><?= htmlspecialchars($client['name']) ?></div>
                                 <?php endif; ?>
-                            <?php else: ?>
-                                <!-- Fallback: show client name as text -->
-                                <div class="client-text-fallback">
-                                    <?= htmlspecialchars($client['name']) ?>
-                                </div>
-                            <?php endif; ?>
+                            </div>
+                            <span class="client-name"><?= htmlspecialchars($client['name']) ?></span>
                         </div>
-                    </div>
+                    </<?= $tag ?>>
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <!-- Fallback: Show placeholder message when no clients are in the database -->
             <div class="clients-grid">
                 <div class="client-logo-box"><div class="client-logo-content"><div class="client-text-fallback">No clients yet</div></div></div>
             </div>

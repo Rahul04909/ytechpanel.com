@@ -1,11 +1,25 @@
 /* ==========================================
-   CLIENTS SHOWCASE SECTION
+   CLIENTS SHOWCASE SECTION — PROFESSIONAL
    ========================================== */
 
 .clients-section {
     padding: 80px 0;
-    background-color: #f8fafc; /* Alternating light background to frame the white logo cards */
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(11,74,131,0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 /* --- Section Header --- */
@@ -20,9 +34,9 @@
     font-weight: 700;
     color: var(--accent-orange);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .clients-title {
@@ -36,31 +50,54 @@
 }
 
 .clients-underline {
-    height: 3px;
-    background-color: var(--accent-orange);
-    width: 60px;
-    margin: 15px auto 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-orange), #ff8c42);
+    width: 70px;
+    margin: 16px auto 0 auto;
+    border-radius: 2px;
 }
 
-/* --- Grid & Boxes Layout --- */
+/* --- Grid Layout --- */
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 Column Layout on Desktop */
-    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
 }
 
+/* --- Client Logo Card --- */
 .client-logo-box {
-    background-color: var(--bg-white);
-    border: 1px solid #e2e8f0;
+    background: var(--bg-white);
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
     aspect-ratio: 2 / 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    border-radius: 0; /* Strictly sharp corners */
+    padding: 0;
     min-width: 0;
     overflow: hidden;
-    transition: var(--transition-smooth);
+    position: relative;
+    cursor: default;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.client-logo-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.client-logo-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 32px rgba(11, 74, 131, 0.12);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .client-logo-content {
@@ -69,12 +106,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.logo-svg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    padding: 18px 14px 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .client-logo-img {
@@ -83,8 +117,37 @@
     width: auto;
     height: auto;
     object-fit: contain;
+    filter: grayscale(0%) brightness(1);
+    transition: filter 0.4s ease, transform 0.4s ease;
 }
 
+.client-logo-box:hover .client-logo-img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+/* Client name below logo */
+.client-name {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    padding: 0 10px 12px;
+    line-height: 1.3;
+    width: 100%;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 8px;
+    margin-top: auto;
+    transition: color 0.3s ease;
+    letter-spacing: 0.2px;
+}
+
+.client-logo-box:hover .client-name {
+    color: var(--primary-color);
+}
+
+/* Text fallback when no logo */
 .client-text-fallback {
     font-family: var(--font-heading);
     font-size: 12px;
@@ -95,22 +158,62 @@
     opacity: 0.7;
 }
 
-/* Hover effect */
-.client-logo-box:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 20px rgba(11, 74, 131, 0.08);
-    transform: translateY(-3px);
+/* Client website link wrapper */
+.client-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
+.client-logo-link:hover {
+    text-decoration: none;
+}
 
-/* ==========================================
-   MEDIA QUERIES (RESPONSIVENESS)
-   ========================================== */
+/* --- Entrance Animations --- */
+.client-logo-box {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: clFadeInUp 0.6s ease forwards;
+}
 
+.client-logo-box:nth-child(1) { animation-delay: 0.05s; }
+.client-logo-box:nth-child(2) { animation-delay: 0.10s; }
+.client-logo-box:nth-child(3) { animation-delay: 0.15s; }
+.client-logo-box:nth-child(4) { animation-delay: 0.20s; }
+.client-logo-box:nth-child(5) { animation-delay: 0.25s; }
+.client-logo-box:nth-child(6) { animation-delay: 0.30s; }
+.client-logo-box:nth-child(7) { animation-delay: 0.35s; }
+.client-logo-box:nth-child(8) { animation-delay: 0.40s; }
+.client-logo-box:nth-child(9) { animation-delay: 0.45s; }
+.client-logo-box:nth-child(10) { animation-delay: 0.50s; }
+.client-logo-box:nth-child(11) { animation-delay: 0.55s; }
+.client-logo-box:nth-child(12) { animation-delay: 0.60s; }
+.client-logo-box:nth-child(13) { animation-delay: 0.65s; }
+.client-logo-box:nth-child(14) { animation-delay: 0.70s; }
+.client-logo-box:nth-child(15) { animation-delay: 0.75s; }
+.client-logo-box:nth-child(16) { animation-delay: 0.80s; }
+.client-logo-box:nth-child(17) { animation-delay: 0.85s; }
+.client-logo-box:nth-child(18) { animation-delay: 0.90s; }
+
+@keyframes clFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Grid --- */
 @media (max-width: 1200px) {
     .clients-grid {
         grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
+        gap: 18px;
     }
 }
 
@@ -124,28 +227,204 @@
     .clients-section {
         padding: 60px 0;
     }
-    
+
     .clients-title {
         font-size: 28px;
     }
-    
+
     .clients-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        gap: 14px;
+    }
+
+    .client-logo-content {
+        padding: 14px 10px 8px;
+    }
+
+    .client-name {
+        font-size: 10px;
+        padding: 6px 8px 10px;
     }
 }
 
 @media (max-width: 480px) {
     .clients-title {
-        font-size: 24px;
+        font-size: 22px;
     }
-    
+
     .clients-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 12px;
     }
-    
+
     .client-logo-box {
-        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .client-logo-content {
+        padding: 12px 8px 6px;
+    }
+
+    .client-name {
+        font-size: 9px;
+        padding: 4px 6px 8px;
     }
 }
+
+/* ==========================================
+   MAIN PAGE SPECIFIC — client-card-wrapper
+   (used only on clients.php)
+   ========================================== */
+
+.client-card-wrapper {
+    background: var(--bg-white);
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 2 / 1;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: clFadeInUp 0.6s ease forwards;
+}
+
+.client-card-wrapper:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 32px rgba(11, 74, 131, 0.12);
+    transform: translateY(-6px) scale(1.02);
+}
+
+.client-card-wrapper .client-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.client-card-wrapper .client-text-fallback {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Client name inside card */
+.client-card-name {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    padding: 8px 12px 12px;
+    line-height: 1.3;
+    width: 100%;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 6px;
+    transition: color 0.3s ease;
+}
+
+.client-card-wrapper:hover .client-card-name {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   OVERLAY HOVER EFFECT
+   ========================================== */
+.client-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(11,74,131,0.92) 0%, rgba(15,94,168,0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.client-card-wrapper:hover .client-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.client-overlay-name {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.client-overlay-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.client-overlay-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 6px 16px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.client-overlay-link:hover {
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.client-overlay-link svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* stagger animation for card-wrapper */
+.client-card-wrapper:nth-child(1) { animation-delay: 0.05s; }
+.client-card-wrapper:nth-child(2) { animation-delay: 0.10s; }
+.client-card-wrapper:nth-child(3) { animation-delay: 0.15s; }
+.client-card-wrapper:nth-child(4) { animation-delay: 0.20s; }
+.client-card-wrapper:nth-child(5) { animation-delay: 0.25s; }
+.client-card-wrapper:nth-child(6) { animation-delay: 0.30s; }
+.client-card-wrapper:nth-child(7) { animation-delay: 0.35s; }
+.client-card-wrapper:nth-child(8) { animation-delay: 0.40s; }
+.client-card-wrapper:nth-child(9) { animation-delay: 0.45s; }
+.client-card-wrapper:nth-child(10) { animation-delay: 0.50s; }
+.client-card-wrapper:nth-child(11) { animation-delay: 0.55s; }
+.client-card-wrapper:nth-child(12) { animation-delay: 0.60s; }
+.client-card-wrapper:nth-child(13) { animation-delay: 0.65s; }
+.client-card-wrapper:nth-child(14) { animation-delay: 0.70s; }
+.client-card-wrapper:nth-child(15) { animation-delay: 0.75s; }
+.client-card-wrapper:nth-child(16) { animation-delay: 0.80s; }
+.client-card-wrapper:nth-child(17) { animation-delay: 0.85s; }
+.client-card-wrapper:nth-child(18) { animation-delay: 0.90s; }

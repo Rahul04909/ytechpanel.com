@@ -62,6 +62,7 @@ if ($db) {
             <div class="header-gst-badge">
                 <span class="gst-label">GSTIN</span>
                 <span class="gst-val">06DKQPM5749K1ZC</span>
+                <span class="gst-address">Faridabad, Haryana, India, 121002</span>
             </div>
         </div>
 
@@ -70,12 +71,10 @@ if ($db) {
             <!-- Phone Block -->
             <div class="info-block">
                 <div class="info-icon">
-                    <!-- Double device / outline phones icon -->
+                    <!-- Smartphone / Mobile Icon -->
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="2" width="10" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="10" y1="17" x2="10" y2="17" stroke-linecap="round"/>
-                        <rect x="11" y="7" width="8" height="14" rx="1.5" fill="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="15" y1="18" x2="15" y2="18" stroke-linecap="round"/>
+                        <rect x="7" y="2" width="10" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="12" y1="18" x2="12" y2="18" stroke-linecap="round"/>
                     </svg>
                 </div>
                 <div class="info-details">
@@ -98,7 +97,8 @@ if ($db) {
                 <div class="info-details">
                     <span class="info-label">Email</span>
                     <span class="info-value">
-                        <a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a>
+                        <span><a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a></span>
+                        <span><a href="mailto:info@ytechpanels.com">info@ytechpanels.com</a></span>
                     </span>
                 </div>
             </div>
@@ -290,10 +290,8 @@ if ($db) {
         <div class="info-block">
             <div class="info-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="5" y="2" width="10" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="10" y1="17" x2="10" y2="17"/>
-                    <rect x="11" y="7" width="8" height="14" rx="1.5" fill="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="15" y1="18" x2="15" y2="18"/>
+                    <rect x="7" y="2" width="10" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="12" y1="18" x2="12" y2="18" stroke-linecap="round"/>
                 </svg>
             </div>
             <div class="info-details">
@@ -314,7 +312,8 @@ if ($db) {
             <div class="info-details">
                 <span class="info-label">Email</span>
                 <span class="info-value">
-                    <a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a>
+                    <span><a href="mailto:sales@ytechpanels.com">sales@ytechpanels.com</a></span>
+                    <span><a href="mailto:info@ytechpanels.com">info@ytechpanels.com</a></span>
                 </span>
             </div>
         </div>

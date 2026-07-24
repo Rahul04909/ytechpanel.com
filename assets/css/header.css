@@ -215,6 +215,14 @@ button {
     letter-spacing: 0.5px;
 }
 
+.gst-address {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
 @media (max-width: 768px) {
     .header-gst-badge {
         display: none;
